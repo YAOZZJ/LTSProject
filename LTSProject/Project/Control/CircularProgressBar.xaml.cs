@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LTSProject.Controls
+namespace Project.Control
 {
     /// <summary>
-    /// LineChartControl.xaml 的交互逻辑
+    /// CircularProgressBar.xaml 的交互逻辑
     /// </summary>
-    public partial class LineChartControl : UserControl
+    public partial class CircularProgressBar : UserControl
     {
-        public LineChartControl()
+        public CircularProgressBar()
         {
             InitializeComponent();
         }

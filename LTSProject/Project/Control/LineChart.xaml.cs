@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LTSProject.Controls
+namespace Project.Control
 {
     /// <summary>
-    /// WorkPlaces.xaml 的交互逻辑
+    /// LineChart.xaml 的交互逻辑
     /// </summary>
-    public partial class WorkPlaces : UserControl
+    public partial class LineChart : UserControl
     {
-        public WorkPlaces()
+        public LineChart()
         {
             InitializeComponent();
         }

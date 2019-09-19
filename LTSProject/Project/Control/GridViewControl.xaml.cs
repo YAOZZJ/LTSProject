@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LTSProject.Controls
+namespace Project.Control
 {
     /// <summary>
-    /// BarChartControl.xaml 的交互逻辑
+    /// GridViewControl.xaml 的交互逻辑
     /// </summary>
-    public partial class BarChartControl : UserControl
+    public partial class GridViewControl : UserControl
     {
-        public BarChartControl()
+        public GridViewControl()
         {
             InitializeComponent();
         }

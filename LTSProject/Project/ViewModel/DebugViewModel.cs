@@ -1,16 +1,16 @@
-﻿using Caliburn.Micro;
+﻿using GalaSoft.MvvmLight;
+using Project.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace LTSProject.ViewModels
+namespace Project.ViewModel
 {
-    public class MainViewModel : PropertyChangedBase
+    public class DebugViewModel : ViewModelBase
     {
-        public MainViewModel()
+        public DebugViewModel()
         {
             this.Books = new List<Book>
             {
@@ -22,34 +22,6 @@ namespace LTSProject.ViewModels
                 new Book { Author = "Jil", ISBN = "0005", Price = 18.3, Publisher = "Redist", Title = "Health care for children" }
             };
         }
-        public void BtnDebug1()
-        {
-            MessageBox.Show("sdfsdf");
-        }
-        public void BtnDebug2()
-        {
-        }
-        public void BtnDebug3()
-        {
-        }
-        public void BtnDebug4()
-        {
-        }
-        public void BtnDebug5()
-        {
-        }
-        public void BtnDebug6()
-        {
-        }
         public List<Book> Books { get; set; }
-
-    }
-    public class Book
-    {
-        public string Title { get; set; }
-        public string ISBN { get; set; }
-        public string Publisher { get; set; }
-        public double Price { get; set; }
-        public string Author { get; set; }
     }
 }

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project.Control"
              xmlns:avalondock="http://schemas.xceed.com/wpf/xaml/avalondock"
+             xmlns:ctrl="clr-namespace:Project.Control"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -45,8 +46,9 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
-                                        <!--<ctrl:GridView Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"></ctrl:GridView>
-                                        <ctrl:BarChartControl Grid.Row="0" Grid.Column="1"></ctrl:BarChartControl>
+                                        <ctrl:GridViewControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
+                                                              ></ctrl:GridViewControl>
+                                        <!--<ctrl:BarChartControl Grid.Row="0" Grid.Column="1"></ctrl:BarChartControl>
                                         <ctrl:LineChartControl Grid.Row="1" Grid.Column="1"></ctrl:LineChartControl>-->
                                     </Grid>
                                 </avalondock:LayoutDocument>
