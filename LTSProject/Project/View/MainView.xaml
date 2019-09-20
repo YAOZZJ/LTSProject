@@ -7,8 +7,14 @@
         xmlns:ctrl="clr-namespace:Project.Control"
         xmlns:Fluent="urn:fluent-ribbon"
         xmlns:avalondock="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainView" Height="768" Width="1366" 
+                     WindowStartupLocation="CenterScreen"
+                     WindowState="Maximized"
+                     WindowStyle="None"
+                     DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
+                     >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -85,18 +91,28 @@
             </avalondock:DockingManager.Theme>
             <avalondock:LayoutRoot>
                 <avalondock:LayoutPanel >
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="100" FloatingWidth="100">
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="350" FloatingWidth="300">
                         <avalondock:LayoutAnchorablePane>
-                            <avalondock:LayoutAnchorable Title="UpperL1">
-                                <TextBlock>fffff</TextBlock>
+                            <avalondock:LayoutAnchorable Title="BarChart">
+                                <ctrl:BarChart></ctrl:BarChart>
                             </avalondock:LayoutAnchorable>
-                            <avalondock:LayoutAnchorable Title="UpperL2">
-                                <TextBlock>fffff</TextBlock>
+                            <avalondock:LayoutAnchorable Title="I/OMonitor">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        
+                                    </StackPanel>
+                                    <WrapPanel Orientation="Horizontal" >
+                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                    </WrapPanel>
+                                </StackPanel>
                             </avalondock:LayoutAnchorable>
                         </avalondock:LayoutAnchorablePane>
                         <avalondock:LayoutAnchorablePane>
-                            <avalondock:LayoutAnchorable Title="LowerL1">
-                                <TextBlock>fffff</TextBlock>
+                            <avalondock:LayoutAnchorable Title="LineChart">
+                                <ctrl:LineChart></ctrl:LineChart>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="LowerL2">
                                 <TextBlock>fffff</TextBlock>
@@ -107,39 +123,25 @@
                         <avalondock:LayoutDocumentPaneGroup Orientation="Horizontal">
                             <avalondock:LayoutDocumentPane>
                                 <avalondock:LayoutDocument Title="Main">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <ctrl:GridViewControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" 
-                                                              DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
-                                                              ></ctrl:GridViewControl>
-                                        <ctrl:BarChart Grid.Row="0" Grid.Column="1"></ctrl:BarChart>
-                                        <ctrl:LineChart Grid.Row="1" Grid.Column="1"></ctrl:LineChart>
-                                    </Grid>
                                 </avalondock:LayoutDocument>
                                 <avalondock:LayoutDocument Title="Debug">
-                                    <Button>Click</Button>
                                 </avalondock:LayoutDocument>
                             </avalondock:LayoutDocumentPane>
                         </avalondock:LayoutDocumentPaneGroup>
                         <avalondock:LayoutAnchorablePaneGroup DockHeight="100" FloatingHeight="100">
                             <avalondock:LayoutAnchorablePane>
-                                <avalondock:LayoutAnchorable Title="Bottom1"></avalondock:LayoutAnchorable>
+                                <avalondock:LayoutAnchorable Title="Output">
+                                    <TextBlock x:Name="TxtOutput"></TextBlock>
+                                </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom3"></avalondock:LayoutAnchorable>
                             </avalondock:LayoutAnchorablePane>
                         </avalondock:LayoutAnchorablePaneGroup>
                     </avalondock:LayoutPanel>
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="100" FloatingWidth="100">
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="550" FloatingWidth="500">
                         <avalondock:LayoutAnchorablePane>
-                            <avalondock:LayoutAnchorable Title="UpperR1" ContentId="UpperR1">
-                                <TextBlock>fffff</TextBlock>
+                            <avalondock:LayoutAnchorable Title="GridView">
+                                <ctrl:GridViewControl></ctrl:GridViewControl>
                             </avalondock:LayoutAnchorable>
 
                         </avalondock:LayoutAnchorablePane>
