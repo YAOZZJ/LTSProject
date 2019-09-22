@@ -25,7 +25,7 @@
         <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Black" Foreground="AliceBlue" HorizontalContentAlignment="Center">GroupName</TextBox>
         <TextBlock Grid.Row="1" Grid.Column="0" Background="Black" Foreground="AliceBlue">I/O</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="1" Background="Black" Foreground="AliceBlue">Description</TextBlock>
-        <ToggleButton Grid.Row="2" Grid.Column="0" Style="{DynamicResource IOToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
         <ToggleButton Grid.Row="3" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
         <ToggleButton Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
         <ToggleButton Grid.Row="5" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>

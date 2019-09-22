@@ -1,7 +1,31 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--
+    引用
+    <ToggleButton Style="{StaticResource IOToggleButton}"></ToggleButton>
+    -->
     <Style x:Key="IOToggleButton" TargetType="ToggleButton">
         <Setter Property="Background" Value="{x:Null}"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Rectangle Name="Rectangle1"
+                            Width="{TemplateBinding Width}" 
+                                   Height="{TemplateBinding Height}" 
+                                   Fill="Gray">
+                        </Rectangle>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="Rectangle1" Property="Fill" Value="Yellow"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="Rectangle1" Property="Fill" Value="Gray"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
