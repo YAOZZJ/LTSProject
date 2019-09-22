@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Project.ViewModel
 {
@@ -41,7 +42,8 @@ namespace Project.ViewModel
             for (int i = 0; i < 20; i++)
             {
                 y = Convert.ToDouble(i) * 10;
-                ColumnGraph.Add(new ColumnGraphDebug {
+                ColumnGraph.Add(new ColumnGraphDebug
+                {
                     Label = y.ToString(),
                     Value = y
                 });
@@ -54,11 +56,20 @@ namespace Project.ViewModel
                                 new Item {Label = "Pears", Value1 = 7, Value2 = 21, Value3 = 9},
                                 new Item {Label = "Bananas", Value1 = 23, Value2 = 2, Value3 = 29}
                             };
+            //*******************************************************************************************************************************
+            this.ColorSelector = new Collection<ColorSelect>();
+            var properties = typeof(Colors).GetProperties();
+            foreach (System.Reflection.PropertyInfo info in properties)
+            {
+                ColorSelector.Add(new ColorSelect { Color = info.Name, Name = info.Name});
+
+            }
         }
         public List<Book> Books { get; set; }
         public Collection<LineDebug> LineGraph { get; set; }
         public Collection<ColumnGraphDebug> ColumnGraph { get; set; }
         public Collection<Item> Items { get; set; }
+        public Collection<ColorSelect> ColorSelector { get; set; }
 
     }
 }

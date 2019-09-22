@@ -97,17 +97,25 @@
                                 <ctrl:BarChart></ctrl:BarChart>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="I/OMonitor">
-                                <StackPanel Orientation="Vertical">
-                                    <StackPanel Orientation="Horizontal">
+                                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                                               ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                              Name="ScrIO">
+                                    <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal">
                                         
+                                        </StackPanel>
+                                        <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=ScrIO,Path=ActualWidth,Mode=Default}">
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                        </WrapPanel>
                                     </StackPanel>
-                                    <WrapPanel Orientation="Horizontal" >
-                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                        <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                    </WrapPanel>
-                                </StackPanel>
+                                </ScrollViewer>
                             </avalondock:LayoutAnchorable>
                         </avalondock:LayoutAnchorablePane>
                         <avalondock:LayoutAnchorablePane>
@@ -143,7 +151,9 @@
                             <avalondock:LayoutAnchorable Title="GridView">
                                 <ctrl:GridViewControl></ctrl:GridViewControl>
                             </avalondock:LayoutAnchorable>
-
+                            <avalondock:LayoutAnchorable Title="Color">
+                                <ctrl:Color></ctrl:Color>
+                            </avalondock:LayoutAnchorable>
                         </avalondock:LayoutAnchorablePane>
                     </avalondock:LayoutAnchorablePaneGroup>
                 </avalondock:LayoutPanel>

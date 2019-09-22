@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project.Control"
-             mc:Ignorable="d" Width="300">
+             mc:Ignorable="d" Width="200">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -13,33 +14,34 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Black" Foreground="AliceBlue" HorizontalContentAlignment="Center">GroupName</TextBox>
         <TextBlock Grid.Row="1" Grid.Column="0" Background="Black" Foreground="AliceBlue">I/O</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="1" Background="Black" Foreground="AliceBlue">Description</TextBlock>
-        <Button Grid.Row="2" Grid.Column="0"></Button>
-        <Button Grid.Row="3" Grid.Column="0"></Button>
-        <Button Grid.Row="4" Grid.Column="0"></Button>
-        <Button Grid.Row="5" Grid.Column="0"></Button>
-        <Button Grid.Row="6" Grid.Column="0"></Button>
-        <Button Grid.Row="7" Grid.Column="0"></Button>
-        <Button Grid.Row="8" Grid.Column="0"></Button>
-        <Button Grid.Row="9" Grid.Column="0"></Button>
-        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="8" Grid.Column="1"></TextBox>
-        <TextBox Grid.Row="9" Grid.Column="1"></TextBox>
+        <ToggleButton Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="3" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="5" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="6" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="7" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="8" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <ToggleButton Grid.Row="9" Grid.Column="0" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"></ToggleButton>
+        <TextBox Grid.Row="2" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="6" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="8" Grid.Column="1" FontSize="11"></TextBox>
+        <TextBox Grid.Row="9" Grid.Column="1" FontSize="11"></TextBox>
     </Grid>
 </UserControl>

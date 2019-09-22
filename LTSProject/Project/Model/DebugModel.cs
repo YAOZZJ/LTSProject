@@ -35,4 +35,9 @@ namespace Project.Model
         public double Value2 { get; set; }
         public double Value3 { get; set; }
     }
+    public class ColorSelect
+    {
+        public String Color { get; set; }
+        public String Name { get; set; }
+    }
 }

@@ -138,6 +138,9 @@
     <Compile Include="Control\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\Color.xaml.cs">
+      <DependentUpon>Color.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\GridViewControl.xaml.cs">
       <DependentUpon>GridViewControl.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,7 @@
     </Compile>
     <Compile Include="Model\DebugModel.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="ViewModel\DebugViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -175,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\CircularProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Color.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

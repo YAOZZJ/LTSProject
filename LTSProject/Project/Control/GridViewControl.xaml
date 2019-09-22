@@ -7,12 +7,19 @@
              mc:Ignorable="d"
              >
     <Grid>
-        <ListView x:Name="ListView1" Grid.Row="1" Grid.ColumnSpan="2"
+        <ListView x:Name="ListView1"
                   ItemsSource="{Binding Books}"
           IsSynchronizedWithCurrentItem="True">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
+                        <!--<GridViewColumn Header="Color" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button>sf</Button>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>-->
                         <GridViewColumn Header="Title"
                                 DisplayMemberBinding="{Binding Title}"/>
                         <GridViewColumn Header="Author"
