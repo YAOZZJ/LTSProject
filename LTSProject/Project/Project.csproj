@@ -194,7 +194,7 @@
       <DependentUpon>WorkPlaces.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DebugModel.cs" />
-    <Compile Include="Model\NlogItem.cs" />
+    <Compile Include="Model\NLogItem.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="ViewModel\DebugViewModel.cs" />

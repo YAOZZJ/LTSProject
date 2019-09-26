@@ -69,11 +69,10 @@
             <Fluent:RibbonTabItem Header="Debug">
                 <Fluent:RibbonGroupBox Header="Button">
                     <Fluent:Button Size="Middle" x:Name="BtnDebug1" Command="{Binding BtnDebug1Command}">B1</Fluent:Button>
-                    <Fluent:Button Size="Middle" x:Name="BtnDebug2">B2</Fluent:Button>
-                    <Fluent:Button Size="Middle" x:Name="BtnDebug3">B3</Fluent:Button>
-                    <Fluent:Button Size="Middle" x:Name="BtnDebug4">B4</Fluent:Button>
-                    <Fluent:Button Size="Middle" x:Name="BtnDebug5">B5</Fluent:Button>
-                    <Fluent:Button Size="Middle" x:Name="BtnDebug6">B6</Fluent:Button>
+                    <Fluent:Button Size="Middle" x:Name="BtnDebug2" Command="{Binding BtnDebug2Command}">B2</Fluent:Button>
+                    <Fluent:Button Size="Middle" x:Name="BtnDebug3" Command="{Binding BtnDebug3Command}">B3</Fluent:Button>
+                    <Fluent:Button Size="Middle" x:Name="BtnDebug4" Command="{Binding BtnDebug4Command}">B4</Fluent:Button>
+                    <Fluent:Button Size="Middle" x:Name="BtnDebug5" Command="{Binding BtnDebug5Command}">B5</Fluent:Button>
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Toggle">
                     <Fluent:ToggleButton Size="Middle">T1</Fluent:ToggleButton>
@@ -139,7 +138,7 @@
                         <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
                             <avalondock:LayoutAnchorablePane>
                                 <avalondock:LayoutAnchorable Title="Output">
-                                    <ctrl:LogGridView></ctrl:LogGridView>
+                                    <ctrl:LogGridView DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:LogGridView>
                                 </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom3"></avalondock:LayoutAnchorable>

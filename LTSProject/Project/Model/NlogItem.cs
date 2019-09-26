@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.Model
 {
-    public class NlogItem
+    public class NLogItem
     {
         public DateTime Time { get; set; }
         public string Level { get; set; }
@@ -14,7 +14,7 @@ namespace Project.Model
         public string Source { get; set; }
         public string SourceDetails { get; set; }
         public string Message { get; set; }
-        public string MessageID { get; set; }
+        public uint MessageID { get; set; }
         public string Logger { get; set; }
         public string CallSite { get; set; }
         public string Exception { get; set; }
