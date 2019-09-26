@@ -8,7 +8,10 @@ namespace Project.Model
 {
     public class NLogItem
     {
-        public DateTime Time { get; set; }
+        //public DateTime Time { get; set; }
+        private string time;
+        public string Time { get => time; set => time = value; }
+
         public string Level { get; set; }
         public string Threadname { get; set; }
         public string Source { get; set; }

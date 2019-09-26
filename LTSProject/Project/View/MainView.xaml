@@ -8,12 +8,13 @@
         xmlns:Fluent="urn:fluent-ribbon"
         xmlns:avalondock="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainView" Height="768" Width="1366" 
                      WindowStartupLocation="CenterScreen"
                      WindowState="Maximized"
                      WindowStyle="None"
-                     DataContext="{Binding Source={StaticResource Locator},Path=Main}"
+                     DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
                      >
     <Grid>
         <Grid.RowDefinitions>
@@ -82,6 +83,17 @@
                     <Fluent:ToggleButton>T5</Fluent:ToggleButton>
                     <Fluent:ToggleButton>T6</Fluent:ToggleButton>
                 </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Debug2">
+                    <Fluent:Button x:Name="BtnDebugX1" Size="Middle" Click="BtnDebug1_Click">BX1</Fluent:Button>
+                    <Fluent:Button x:Name="BtnDebugX2" Size="Middle" Click="BtnDebug2_Click">BX2</Fluent:Button>
+                    <Fluent:Button x:Name="BtnDebugX3" Size="Middle" Click="BtnDebug3_Click">BX3</Fluent:Button>
+                    <Fluent:Button x:Name="BtnDebugX4" Size="Middle" Click="BtnDebug4_Click">BX4</Fluent:Button>
+                    <Fluent:Button x:Name="BtnDebugX5" Size="Middle" Click="BtnDebug5_Click">BX5</Fluent:Button>
+                    <Fluent:Button x:Name="BtnDebugX6" Size="Middle" Click="BtnDebug6_Click">BX6</Fluent:Button>
+                    <Fluent:TextBox x:Name="TxtDebugX1" Width="200"></Fluent:TextBox>
+                    <Fluent:TextBox x:Name="TxtDebugX2" Width="200"></Fluent:TextBox>
+                    <Fluent:TextBox x:Name="TxtDebugX3" Width="200"></Fluent:TextBox>
+                </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
         <avalondock:DockingManager x:Name="DockManager" Grid.Row="1">
@@ -90,7 +102,7 @@
             </avalondock:DockingManager.Theme>
             <avalondock:LayoutRoot>
                 <avalondock:LayoutPanel >
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="350" FloatingWidth="300">
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="150" FloatingWidth="100">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="BarChart">
                                 <ctrl:BarChart DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:BarChart>
@@ -104,14 +116,14 @@
                                         
                                         </StackPanel>
                                         <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=ScrIO,Path=ActualWidth,Mode=Default}">
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"></ctrl:IOMonitor08>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
                                         </WrapPanel>
                                     </StackPanel>
                                 </ScrollViewer>
@@ -138,14 +150,42 @@
                         <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
                             <avalondock:LayoutAnchorablePane>
                                 <avalondock:LayoutAnchorable Title="Output">
-                                    <ctrl:LogGridView DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:LogGridView>
+                                    <ctrl:LogGridView DataContext="{Binding Source={StaticResource Locator},Path=Debug,UpdateSourceTrigger=PropertyChanged}"></ctrl:LogGridView>
+                                    <!--<ListView ItemsSource="{Binding LogItems,UpdateSourceTrigger=PropertyChanged}"
+                                              Name="GridViewDeubg"
+                                        IsSynchronizedWithCurrentItem="True">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Time" 
+                                    DisplayMemberBinding="{Binding Time}"/>
+                                                <GridViewColumn Header="Level" 
+                                    DisplayMemberBinding="{Binding Level}"/>
+                                                <GridViewColumn Header="Threadname" 
+                                    DisplayMemberBinding="{Binding Threadname}"/>
+                                                <GridViewColumn Header="Source" 
+                                    DisplayMemberBinding="{Binding Source}"/>
+                                                <GridViewColumn Header="SourceDetails" 
+                                    DisplayMemberBinding="{Binding SourceDetails}"/>
+                                                <GridViewColumn Header="Message" 
+                                    DisplayMemberBinding="{Binding Message}"/>
+                                                <GridViewColumn Header="MessageID" 
+                                    DisplayMemberBinding="{Binding MessageID}"/>
+                                                <GridViewColumn Header="Logger" 
+                                    DisplayMemberBinding="{Binding Logger}"/>
+                                                <GridViewColumn Header="CallSite" 
+                                    DisplayMemberBinding="{Binding CallSite}"/>
+                                                <GridViewColumn Header="Exception" 
+                                    DisplayMemberBinding="{Binding Exception}"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>-->
                                 </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom3"></avalondock:LayoutAnchorable>
                             </avalondock:LayoutAnchorablePane>
                         </avalondock:LayoutAnchorablePaneGroup>
                     </avalondock:LayoutPanel>
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="550" FloatingWidth="500">
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="100" FloatingWidth="500">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="GridView">
                                 <ctrl:GridViewControl DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:GridViewControl>

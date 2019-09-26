@@ -197,12 +197,14 @@
     <Compile Include="Model\NLogItem.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Unitities\SQLiteHelper.cs" />
     <Compile Include="ViewModel\DebugViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MainViewDebug.cs" />
     <Page Include="Control\BarChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
