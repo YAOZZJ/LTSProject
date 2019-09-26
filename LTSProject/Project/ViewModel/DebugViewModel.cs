@@ -1,4 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using NLog.Fluent;
 using Project.Model;
 using System;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace Project.ViewModel
@@ -70,6 +73,30 @@ namespace Project.ViewModel
         public Collection<ColumnGraphDebug> ColumnGraph { get; set; }
         public Collection<Item> Items { get; set; }
         public Collection<ColorSelect> ColorSelector { get; set; }
+        #region "Command"
+        private RelayCommand btnDebug1Command;
+        private bool  isCanBtnDebug1;
+        public bool IsCanBtnDebug1 { get => isCanBtnDebug1; set => isCanBtnDebug1 = value; }
+        public RelayCommand BtnDebug1Command
+        {
+            get
+            {
+                if(btnDebug1Command == null)
+                {
+                    btnDebug1Command = new RelayCommand(BtnDebug1Action);
+                }
+                return btnDebug1Command;
+            } 
+            set => btnDebug1Command = value;
+        }
+        private void BtnDebug1Action()
+{
+            
+            NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+            logger.Fatal("发生致命错误");
+            logger.Warn("警告信息");
+        }
+    #endregion
 
-    }
+}
 }

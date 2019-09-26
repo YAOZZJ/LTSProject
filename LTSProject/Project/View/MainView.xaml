@@ -13,7 +13,7 @@
                      WindowStartupLocation="CenterScreen"
                      WindowState="Maximized"
                      WindowStyle="None"
-                     DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
+                     DataContext="{Binding Source={StaticResource Locator},Path=Main}"
                      >
     <Grid>
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Fluent:Ribbon Grid.Row="0">
+        <Fluent:Ribbon Grid.Row="0" DataContext="{Binding Source={StaticResource Locator},Path=Debug}">
             <Fluent:Ribbon.Menu>
                 <Fluent:Backstage>
                     <Fluent:BackstageTabControl>
@@ -68,7 +68,7 @@
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="Debug">
                 <Fluent:RibbonGroupBox Header="Button">
-                    <Fluent:Button Size="Middle" x:Name="BtnDebug1">B1</Fluent:Button>
+                    <Fluent:Button Size="Middle" x:Name="BtnDebug1" Command="{Binding BtnDebug1Command}">B1</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug2">B2</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug3">B3</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug4">B4</Fluent:Button>
@@ -94,7 +94,7 @@
                     <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="350" FloatingWidth="300">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="BarChart">
-                                <ctrl:BarChart></ctrl:BarChart>
+                                <ctrl:BarChart DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:BarChart>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="I/OMonitor">
                                 <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" 
@@ -120,7 +120,7 @@
                         </avalondock:LayoutAnchorablePane>
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="LineChart">
-                                <ctrl:LineChart></ctrl:LineChart>
+                                <ctrl:LineChart DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:LineChart>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="LowerL2">
                                 <TextBlock>fffff</TextBlock>
@@ -136,10 +136,10 @@
                                 </avalondock:LayoutDocument>
                             </avalondock:LayoutDocumentPane>
                         </avalondock:LayoutDocumentPaneGroup>
-                        <avalondock:LayoutAnchorablePaneGroup DockHeight="100" FloatingHeight="100">
+                        <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
                             <avalondock:LayoutAnchorablePane>
                                 <avalondock:LayoutAnchorable Title="Output">
-                                    <TextBlock x:Name="TxtOutput"></TextBlock>
+                                    <ctrl:LogGridView></ctrl:LogGridView>
                                 </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom3"></avalondock:LayoutAnchorable>
@@ -149,7 +149,7 @@
                     <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="550" FloatingWidth="500">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="GridView">
-                                <ctrl:GridViewControl></ctrl:GridViewControl>
+                                <ctrl:GridViewControl DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:GridViewControl>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="Color">
                                 <ctrl:Color></ctrl:Color>
