@@ -215,9 +215,12 @@
     <Compile Include="Model\NLogItem.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Service\INLogGridViewService.cs" />
+    <Compile Include="Service\NLogGridViewService.cs" />
     <Compile Include="Unitities\SQLiteHelper.cs" />
     <Compile Include="ViewModel\DebugViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\NLogGridViewViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -314,9 +317,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

@@ -28,4 +28,24 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="TransparentToggleButtonButtonStyle" TargetType="ToggleButton">
+        <!--<Setter Property="Padding" Value="0"/>-->
+        <Setter Property="Background" Value="Transparent"/>
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Background="Transparent"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="border" Property="BorderBrush" Value="Black"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="border" Property="BorderBrush" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

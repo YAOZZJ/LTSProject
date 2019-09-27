@@ -2,6 +2,8 @@ using Autofac;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using Project.Service;
+
 namespace Project.ViewModel
 {
     public class ViewModelLocator
@@ -26,12 +28,16 @@ namespace Project.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<DebugViewModel>();
+            builder.RegisterType<NLogGridViewService>().As<INLogGridViewService>();
+
+            NLogGridViewContainer = builder.Build();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public DebugViewModel Debug => ServiceLocator.Current.GetInstance<DebugViewModel>();
+        public NLogGridViewViewModel NLogGridVIew => new NLogGridViewViewModel(NLogGridViewContainer.BeginLifetimeScope().Resolve<INLogGridViewService>());
         //ÈÝÆ÷½Ó¿Ú
-        private static IContainer Container { get; set; }
+        private static IContainer NLogGridViewContainer { get; set; }
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

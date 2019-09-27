@@ -113,7 +113,7 @@
                                               Name="ScrIO">
                                     <StackPanel Orientation="Vertical">
                                         <StackPanel Orientation="Horizontal">
-                                        
+
                                         </StackPanel>
                                         <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=ScrIO,Path=ActualWidth,Mode=Default}">
                                             <ctrl:IOMonitor08 Margin="5,5,5,5"/>
@@ -150,42 +150,29 @@
                         <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
                             <avalondock:LayoutAnchorablePane>
                                 <avalondock:LayoutAnchorable Title="Output">
-                                    <ctrl:LogGridView DataContext="{Binding Source={StaticResource Locator},Path=Debug,UpdateSourceTrigger=PropertyChanged}"></ctrl:LogGridView>
-                                    <!--<ListView ItemsSource="{Binding LogItems,UpdateSourceTrigger=PropertyChanged}"
-                                              Name="GridViewDeubg"
-                                        IsSynchronizedWithCurrentItem="True">
-                                        <ListView.View>
-                                            <GridView>
-                                                <GridViewColumn Header="Time" 
-                                    DisplayMemberBinding="{Binding Time}"/>
-                                                <GridViewColumn Header="Level" 
-                                    DisplayMemberBinding="{Binding Level}"/>
-                                                <GridViewColumn Header="Threadname" 
-                                    DisplayMemberBinding="{Binding Threadname}"/>
-                                                <GridViewColumn Header="Source" 
-                                    DisplayMemberBinding="{Binding Source}"/>
-                                                <GridViewColumn Header="SourceDetails" 
-                                    DisplayMemberBinding="{Binding SourceDetails}"/>
-                                                <GridViewColumn Header="Message" 
-                                    DisplayMemberBinding="{Binding Message}"/>
-                                                <GridViewColumn Header="MessageID" 
-                                    DisplayMemberBinding="{Binding MessageID}"/>
-                                                <GridViewColumn Header="Logger" 
-                                    DisplayMemberBinding="{Binding Logger}"/>
-                                                <GridViewColumn Header="CallSite" 
-                                    DisplayMemberBinding="{Binding CallSite}"/>
-                                                <GridViewColumn Header="Exception" 
-                                    DisplayMemberBinding="{Binding Exception}"/>
-                                            </GridView>
-                                        </ListView.View>
-                                    </ListView>-->
+                                    <Grid DataContext="{Binding Source={StaticResource Locator},
+                                        Path=NLogGridVIew,UpdateSourceTrigger=PropertyChanged}">
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="15">
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                        </StackPanel>
+                                        <ctrl:LogGridView Margin="0,35,0,0"></ctrl:LogGridView>
+                                    </Grid>
                                 </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom3"></avalondock:LayoutAnchorable>
                             </avalondock:LayoutAnchorablePane>
                         </avalondock:LayoutAnchorablePaneGroup>
                     </avalondock:LayoutPanel>
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="100" FloatingWidth="500">
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" FloatingWidth="500">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="GridView">
                                 <ctrl:GridViewControl DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:GridViewControl>
@@ -201,10 +188,10 @@
         <Fluent:StatusBar Grid.Row="2">
             <Fluent:StatusBarItem  HorizontalAlignment="Left">
                 <StackPanel Orientation="Horizontal">
-                <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" 
+                    <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" 
                              Background="AliceBlue"
                              Value="0" IsIndeterminate="True" />
-                <TextBlock Text="Current Status" MinWidth="100" />
+                    <TextBlock Text="Current Status" MinWidth="100" />
                 </StackPanel>
             </Fluent:StatusBarItem>
             <Separator HorizontalAlignment="Left"/>
@@ -221,7 +208,7 @@
             <Fluent:StatusBarItem HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock/>
-                    <TextBlock>Message</TextBlock>
+                    <TextBlock x:Name="TxtMessage">Message</TextBlock>
                     <materialDesign:PackIcon Kind="React" />
                 </StackPanel>
             </Fluent:StatusBarItem>

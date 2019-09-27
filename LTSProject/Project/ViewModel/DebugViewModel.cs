@@ -71,10 +71,10 @@ namespace Project.ViewModel
 
             }
             //*******************************************************************************************************************************
-            if (LogItems == null) LogItems = new ObservableCollection<NLogItem>();
-            if (_sqliteHelper == null)
-                _sqliteHelper = new SQLiteHelper();
-            LogItems = new ObservableCollection<NLogItem>(_sqliteHelper.GetAll());
+            //if (LogItems == null) LogItems = new ObservableCollection<NLogItem>();
+            //if (_sqliteHelper == null)
+            //    _sqliteHelper = new SQLiteHelper();
+            //LogItems = new ObservableCollection<NLogItem>(_sqliteHelper.GetAll());
             //LogItems.Add(new NLogItem {Time = DateTime.Now,Level = "adasda" });
         }
         public List<Book> Books { get; set; }
@@ -82,9 +82,9 @@ namespace Project.ViewModel
         public Collection<ColumnGraphDebug> ColumnGraph { get; set; }
         public Collection<Item> Items { get; set; }
         public Collection<ColorSelect> ColorSelector { get; set; }
-        private ObservableCollection<NLogItem> _logItems;
-        public ObservableCollection<NLogItem> LogItems { get => _logItems; set => Set(ref _logItems, value); }
-        private SQLiteHelper _sqliteHelper;
+        //private ObservableCollection<NLogItem> _logItems;
+        //public ObservableCollection<NLogItem> LogItems { get => _logItems; set => Set(ref _logItems, value); }
+        //private SQLiteHelper _sqliteHelper;
         #region "Command"
         private RelayCommand btnDebug1Command;
         private RelayCommand btnDebug2Command;
@@ -160,7 +160,7 @@ namespace Project.ViewModel
             //logger.Fatal("发生致命错误");
             //logger.Warn("警告信息");
             
-            MessageBox.Show(LogItems.ToList()[1].Time.ToString());
+            //MessageBox.Show(LogItems.ToList()[1].Time.ToString());
         }
         private void BtnDebug2Action() 
         {

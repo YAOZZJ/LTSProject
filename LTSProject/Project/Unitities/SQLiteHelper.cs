@@ -20,12 +20,12 @@ namespace Project.Unitities
         {
             _db.Insert(obj);
         }
-        public NLogItem Get()
-        {
-            var items = new NLogItem();
-            items = _db.Get<NLogItem>(x =>x.MessageID ==16);
-            return items;
-        }
+        //public NLogItem Get()
+        //{
+        //    var items = new NLogItem();
+        //    items = _db.Get<NLogItem>(x =>x.MessageID ==16);
+        //    return items;
+        //}
         public List<NLogItem> GetAll()
         {
             return _db.Table<NLogItem>().ToList();

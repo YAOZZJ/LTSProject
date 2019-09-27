@@ -21,5 +21,22 @@ namespace Project.Model
         public string Logger { get; set; }
         public string CallSite { get; set; }
         public string Exception { get; set; }
+        public NLogItem()
+        {
+
+        }
+        public NLogItem(NLogItem item)
+        {
+            Time = item.Time;
+            Level = item.Level;
+            Threadname = item.Threadname;
+            Source = item.Source;
+            SourceDetails = item.SourceDetails;
+            Message = item.Message;
+            MessageID = item.MessageID;
+            Logger = item.Logger;
+            CallSite = item.CallSite;
+            Exception = item.Exception;
+        }
     }
 }
