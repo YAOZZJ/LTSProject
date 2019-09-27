@@ -199,24 +199,32 @@
             </avalondock:LayoutRoot>
         </avalondock:DockingManager>
         <Fluent:StatusBar Grid.Row="2">
-            <Fluent:StatusBarItem Title="Left placed item"
-                          Value="150"
-                          HorizontalAlignment="Left">
-                <TextBlock Text="150 px" />
+            <Fluent:StatusBarItem  HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" 
+                             Background="AliceBlue"
+                             Value="0" IsIndeterminate="True" />
+                <TextBlock Text="Current Status" MinWidth="100" />
+                </StackPanel>
             </Fluent:StatusBarItem>
-
-            <Separator HorizontalAlignment="Left" />
-
-            <Fluent:StatusBarItem Title="Second left placed item"
-                          Value="Value shown in ContextMenu"
-                          ToolTip="Your ToolTip"
-                          HorizontalAlignment="Left">
-                <ProgressBar Value="25" Height="10" Width="100" />
+            <Separator HorizontalAlignment="Left"/>
+            <Fluent:StatusBarItem HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <ProgressBar x:Name="ProgressMain" Value="25" Height="10" Width="100"
+                                 IsIndeterminate="True"/>
+                    <TextBlock Text="{Binding ElementName=ProgressMain,Path=Value}" 
+                               Foreground="AliceBlue" Margin="5,0,2,0"/>
+                    <TextBlock>%</TextBlock>
+                </StackPanel>
             </Fluent:StatusBarItem>
-
-            <Fluent:StatusBarItem Title="Item placed on the right side"
-                          HorizontalAlignment="Right"
-                          Value="Your value which is also used as content if no content is set." />
+            <Separator HorizontalAlignment="Left"/>
+            <Fluent:StatusBarItem HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock/>
+                    <TextBlock>Message</TextBlock>
+                    <materialDesign:PackIcon Kind="React" />
+                </StackPanel>
+            </Fluent:StatusBarItem>
         </Fluent:StatusBar>
     </Grid>
 </Fluent:RibbonWindow>
