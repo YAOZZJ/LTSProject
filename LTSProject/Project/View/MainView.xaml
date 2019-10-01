@@ -5,6 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.View"
         xmlns:ctrl="clr-namespace:Project.Control"
+        xmlns:ctrlLvc="clr-namespace:Project.Control.LiveChart"
+        xmlns:ctrlmonitor="clr-namespace:Project.Control.Monitor"
+        xmlns:ctrlgridview="clr-namespace:Project.Control.GridView"
+        xmlns:ctrlothers="clr-namespace:Project.Control.Others"
         xmlns:Fluent="urn:fluent-ribbon"
         xmlns:avalondock="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:oxy="http://oxyplot.org/wpf"
@@ -105,7 +109,6 @@
                     <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="150" FloatingWidth="100">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="BarChart">
-                                <ctrl:BarChart DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:BarChart>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="I/OMonitor">
                                 <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" 
@@ -116,14 +119,14 @@
 
                                         </StackPanel>
                                         <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=ScrIO,Path=ActualWidth,Mode=Default}">
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrl:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
+                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
                                         </WrapPanel>
                                     </StackPanel>
                                 </ScrollViewer>
@@ -131,7 +134,6 @@
                         </avalondock:LayoutAnchorablePane>
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="LineChart">
-                                <ctrl:LineChart DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:LineChart>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="LowerL2">
                                 <TextBlock>fffff</TextBlock>
@@ -164,7 +166,7 @@
                                             <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
                                             <GridSplitter Width="2"/>
                                         </StackPanel>
-                                        <ctrl:LogGridView Margin="0,35,0,0"></ctrl:LogGridView>
+                                        <ctrlgridview:LogGridView Margin="0,35,0,0"></ctrlgridview:LogGridView>
                                     </Grid>
                                 </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
@@ -175,10 +177,9 @@
                     <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" FloatingWidth="500">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="GridView">
-                                <ctrl:GridViewControl DataContext="{Binding Source={StaticResource Locator},Path=Debug}"></ctrl:GridViewControl>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="Color">
-                                <ctrl:Color></ctrl:Color>
+                                <ctrlothers:Color></ctrlothers:Color>
                             </avalondock:LayoutAnchorable>
                         </avalondock:LayoutAnchorablePane>
                     </avalondock:LayoutAnchorablePaneGroup>

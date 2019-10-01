@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project.Control
+namespace Project.Control.GridView
 {
     /// <summary>
     /// GridViewControl.xaml 的交互逻辑

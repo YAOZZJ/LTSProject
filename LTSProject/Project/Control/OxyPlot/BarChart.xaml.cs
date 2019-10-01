@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project.Control
+namespace Project.Control.OxyPlot
 {
     /// <summary>
-    /// IOMonitor16.xaml 的交互逻辑
+    /// BarChart.xaml 的交互逻辑
     /// </summary>
-    public partial class IOMonitor16 : UserControl
+    public partial class BarChart : UserControl
     {
-        public IOMonitor16()
+        public BarChart()
         {
             InitializeComponent();
         }

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project.Control
+namespace Project.Control.Monitor
 {
     /// <summary>
-    /// Color.xaml 的交互逻辑
+    /// IOMonitor08.xaml 的交互逻辑
     /// </summary>
-    public partial class Color : UserControl
+    public partial class IOMonitor08 : UserControl
     {
-        public Color()
+        public IOMonitor08()
         {
             InitializeComponent();
         }

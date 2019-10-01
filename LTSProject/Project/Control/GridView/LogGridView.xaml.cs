@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project.Control
+namespace Project.Control.GridView
 {
     /// <summary>
-    /// BarChart.xaml 的交互逻辑
+    /// LogGridView.xaml 的交互逻辑
     /// </summary>
-    public partial class BarChart : UserControl
+    public partial class LogGridView : UserControl
     {
-        public BarChart()
+        public LogGridView()
         {
             InitializeComponent();
         }

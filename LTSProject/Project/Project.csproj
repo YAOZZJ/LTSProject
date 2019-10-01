@@ -178,37 +178,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Control\BarChart.xaml.cs">
+    <Compile Include="Control\OxyPlot\BarChart.xaml.cs">
       <DependentUpon>BarChart.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\CircularProgressBar.xaml.cs">
+    <Compile Include="Control\Others\CircularProgressBar.xaml.cs">
       <DependentUpon>CircularProgressBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\Color.xaml.cs">
+    <Compile Include="Control\Others\Color.xaml.cs">
       <DependentUpon>Color.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\GridViewControl.xaml.cs">
+    <Compile Include="Control\GridView\GridViewControl.xaml.cs">
       <DependentUpon>GridViewControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\IOMonitor01.xaml.cs">
-      <DependentUpon>IOMonitor01.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control\IOMonitor08.xaml.cs">
+    <Compile Include="Control\Monitor\IOMonitor08.xaml.cs">
       <DependentUpon>IOMonitor08.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\IOMonitor16.xaml.cs">
-      <DependentUpon>IOMonitor16.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control\LineChart.xaml.cs">
+    <Compile Include="Control\ResourceDictionary\LineChart.xaml.cs">
       <DependentUpon>LineChart.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\LogGridView.xaml.cs">
+    <Compile Include="Control\LiveChart\LineChartBasic.xaml.cs">
+      <DependentUpon>LineChartBasic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\GridView\LogGridView.xaml.cs">
       <DependentUpon>LogGridView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\RibbonControl.xaml.cs">
+    <Compile Include="Control\Others\RibbonControl.xaml.cs">
       <DependentUpon>RibbonControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\StatusBar.xaml.cs">
+    <Compile Include="Control\Others\StatusBar.xaml.cs">
       <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DebugModel.cs" />
@@ -226,39 +223,35 @@
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainViewDebug.cs" />
-    <Page Include="Control\BarChart.xaml">
+    <Page Include="Control\OxyPlot\BarChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\CircularProgressBar.xaml">
+    <Page Include="Control\Others\CircularProgressBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\Color.xaml">
+    <Page Include="Control\Others\Color.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\GridViewControl.xaml">
+    <Page Include="Control\GridView\GridViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\IOMonitor01.xaml">
+    <Page Include="Control\Monitor\IOMonitor08.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\IOMonitor08.xaml">
+    <Page Include="Control\ResourceDictionary\LineChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\IOMonitor16.xaml">
+    <Page Include="Control\LiveChart\LineChartBasic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\LineChart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Control\LogGridView.xaml">
+    <Page Include="Control\GridView\LogGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,11 +259,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\RibbonControl.xaml">
+    <Page Include="Control\Others\RibbonControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\StatusBar.xaml">
+    <Page Include="Control\Others\StatusBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

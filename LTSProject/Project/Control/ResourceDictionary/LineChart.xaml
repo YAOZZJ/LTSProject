@@ -17,3 +17,16 @@
         </oxy:Plot>
     </Grid>
 </UserControl>
+<!--
+    this.LineGraph = new Collection<LineDebug>();
+            double y = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                y = Convert.ToDouble(i) / 100;
+                this.LineGraph.Add(new LineDebug
+                {
+                    Time = y,
+                    Value = Math.Sin(y)
+                });
+            }
+    -->

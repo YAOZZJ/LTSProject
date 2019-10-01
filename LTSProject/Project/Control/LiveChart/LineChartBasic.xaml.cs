@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project.Control
+namespace Project.Control.LiveChart
 {
     /// <summary>
-    /// IOMonitor08.xaml 的交互逻辑
+    /// LineChartBasic.xaml 的交互逻辑
     /// </summary>
-    public partial class IOMonitor08 : UserControl
+    public partial class LineChartBasic : UserControl
     {
-        public IOMonitor08()
+        public LineChartBasic()
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Project.Control.BarChart"
+﻿<UserControl x:Class="Project.Control.OxyPlot.BarChart"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,3 +19,15 @@
         </oxy:Plot>
     </Grid>
 </UserControl>
+<!--
+    this.ColumnGraph = new Collection<ColumnGraphDebug>();
+            for (int i = 0; i < 20; i++)
+            {
+                y = Convert.ToDouble(i) * 10;
+                ColumnGraph.Add(new ColumnGraphDebug
+                {
+                    Label = y.ToString(),
+                    Value = y
+                });
+            }
+    -->
