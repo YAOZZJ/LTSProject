@@ -25,12 +25,12 @@ namespace Project.ViewModel
         {
             get 
             {
-                if (add == null) add = new RelayCommand(gridViewService.Add);
-                return add;
+                //if (add == null) add = new RelayCommand(gridViewService.Add);
+                return add ?? (new RelayCommand(gridViewService.Add));
             } 
             set => add = value; 
         }
-        #region "COmmand"
+        #region "Command"
         private RelayCommand add;
         #endregion
     }

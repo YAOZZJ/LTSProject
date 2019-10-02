@@ -16,7 +16,7 @@
         mc:Ignorable="d"
         Title="MainView" Height="768" Width="1366" 
                      WindowStartupLocation="CenterScreen"
-                     WindowState="Maximized"
+                     WindowState="Normal"
                      WindowStyle="None"
                      DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
                      >
@@ -26,7 +26,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Fluent:Ribbon Grid.Row="0" DataContext="{Binding Source={StaticResource Locator},Path=Debug}">
+        <Fluent:Ribbon Grid.Row="0">
             <Fluent:Ribbon.Menu>
                 <Fluent:Backstage>
                     <Fluent:BackstageTabControl>
@@ -71,13 +71,18 @@
                 <Fluent:RibbonGroupBox Header="Group3">
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
-            <Fluent:RibbonTabItem Header="Debug">
+            <Fluent:RibbonTabItem Header="Debug"
+                                   DataContext="{Binding Source={StaticResource Locator},Path=Debug}">
                 <Fluent:RibbonGroupBox Header="Button">
                     <Fluent:Button Size="Middle" x:Name="BtnDebug1" Command="{Binding BtnDebug1Command}">B1</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug2" Command="{Binding BtnDebug2Command}">B2</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug3" Command="{Binding BtnDebug3Command}">B3</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug4" Command="{Binding BtnDebug4Command}">B4</Fluent:Button>
                     <Fluent:Button Size="Middle" x:Name="BtnDebug5" Command="{Binding BtnDebug5Command}">B5</Fluent:Button>
+                    <Fluent:Button Size="Middle" x:Name="BtnDebug6" Command="{Binding BtnDebug6Command}">B6</Fluent:Button>
+                    <Fluent:TextBox Width="200" Text="{Binding TxtDebug1,UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}"></Fluent:TextBox>
+                    <Fluent:TextBox Width="200" Text="{Binding TxtDebug2,UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}"></Fluent:TextBox>
+                    <Fluent:TextBox Width="200" Text="{Binding TxtDebug3,UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}"></Fluent:TextBox>
                 </Fluent:RibbonGroupBox>
                 <Fluent:RibbonGroupBox Header="Toggle">
                     <Fluent:ToggleButton Size="Middle">T1</Fluent:ToggleButton>
@@ -155,7 +160,10 @@
                                     <Grid DataContext="{Binding Source={StaticResource Locator},
                                         Path=NLogGridVIew,UpdateSourceTrigger=PropertyChanged}">
                                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="15">
+                                            <Grid>
+                                                <TextBlock>666</TextBlock>
                                             <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            </Grid>
                                             <GridSplitter Width="2"/>
                                             <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
                                             <GridSplitter Width="2"/>

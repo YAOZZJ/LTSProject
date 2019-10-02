@@ -28,7 +28,7 @@ namespace Project.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<DebugViewModel>();
-            builder.RegisterType<NLogGridViewService>().As<INLogGridViewService>();
+            builder.RegisterType<NLogGridViewService>().As<INLogGridViewService>().SingleInstance();//µ¥ÊµÀý
 
             NLogGridViewContainer = builder.Build();
         }
