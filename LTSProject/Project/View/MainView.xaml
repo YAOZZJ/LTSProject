@@ -148,9 +148,9 @@
                     <avalondock:LayoutPanel Orientation="Vertical">
                         <avalondock:LayoutDocumentPaneGroup Orientation="Horizontal">
                             <avalondock:LayoutDocumentPane>
-                                <avalondock:LayoutDocument Title="Main">
-                                </avalondock:LayoutDocument>
                                 <avalondock:LayoutDocument Title="Debug">
+                                </avalondock:LayoutDocument>
+                                <avalondock:LayoutDocument Title="Main">
                                 </avalondock:LayoutDocument>
                             </avalondock:LayoutDocumentPane>
                         </avalondock:LayoutDocumentPaneGroup>
