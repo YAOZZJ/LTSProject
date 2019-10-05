@@ -18,7 +18,7 @@
                      WindowStartupLocation="CenterScreen"
                      WindowState="Normal"
                      WindowStyle="None"
-                     DataContext="{Binding Source={StaticResource Locator},Path=Debug}"
+                     DataContext="{Binding Source={StaticResource Locator},Path=Main}"
                      >
     <Grid>
         <Grid.RowDefinitions>
@@ -56,7 +56,13 @@
                 <Fluent:QuickAccessMenuItem Header="B"/>
             </Fluent:Ribbon.QuickAccessItems>
             <Fluent:RibbonTabItem Header="Home">
-                <Fluent:RibbonGroupBox Header="Group1">
+                <Fluent:RibbonGroupBox Header="Main">
+                    <Fluent:Button Size="Middle" Command="{Binding MainCommand1}">B1</Fluent:Button>
+                    <Fluent:Button Size="Middle" Command="{Binding MainCommand2}">B2</Fluent:Button>
+                    <Fluent:Button Size="Middle" Command="{Binding MainCommand3}">B3</Fluent:Button>
+                    <Fluent:Button Size="Middle" Command="{Binding MainCommand4}">B4</Fluent:Button>
+                    <Fluent:Button Size="Middle" Command="{Binding MainCommand5}">B5</Fluent:Button>
+                    <Fluent:Button Size="Middle" Command="{Binding MainCommand6}">B6</Fluent:Button>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem Header="View">
@@ -156,7 +162,7 @@
                         </avalondock:LayoutDocumentPaneGroup>
                         <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
                             <avalondock:LayoutAnchorablePane>
-                                <avalondock:LayoutAnchorable Title="Output">
+                                <avalondock:LayoutAnchorable Title="Messages">
                                     <Grid DataContext="{Binding Source={StaticResource Locator},
                                         Path=NLogGridVIew,UpdateSourceTrigger=PropertyChanged}">
                                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="15">
@@ -174,11 +180,12 @@
                                             <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
                                             <GridSplitter Width="2"/>
                                         </StackPanel>
-                                        <ctrlgridview:LogGridView Margin="0,35,0,0"></ctrlgridview:LogGridView>
+                                        <ctrlgridview:LogDataGrid Margin="0,35,0,0"></ctrlgridview:LogDataGrid>
                                     </Grid>
                                 </avalondock:LayoutAnchorable>
-                                <avalondock:LayoutAnchorable Title="Bottom2"></avalondock:LayoutAnchorable>
-                                <avalondock:LayoutAnchorable Title="Bottom3"></avalondock:LayoutAnchorable>
+                                <avalondock:LayoutAnchorable Title="Output">
+                                    <TextBlock/>
+                                </avalondock:LayoutAnchorable>
                             </avalondock:LayoutAnchorablePane>
                         </avalondock:LayoutAnchorablePaneGroup>
                     </avalondock:LayoutPanel>
@@ -210,14 +217,14 @@
                                  IsIndeterminate="True"/>
                     <TextBlock Text="{Binding ElementName=ProgressMain,Path=Value}" 
                                Foreground="AliceBlue" Margin="5,0,2,0"/>
-                    <TextBlock>%</TextBlock>
+                    <TextBlock Margin="0,0,10,0">%</TextBlock>
+                    <TextBlock x:Name="TxtMessage" Text="{Binding MessageCurrrent,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                 </StackPanel>
             </Fluent:StatusBarItem>
             <Separator HorizontalAlignment="Left"/>
             <Fluent:StatusBarItem HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock/>
-                    <TextBlock x:Name="TxtMessage">Message</TextBlock>
                     <materialDesign:PackIcon Kind="React" />
                 </StackPanel>
             </Fluent:StatusBarItem>
