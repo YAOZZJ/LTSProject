@@ -178,6 +178,9 @@
     <Compile Include="Control\GridView\LogDataGrid.xaml.cs">
       <DependentUpon>LogDataGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\Manager\TreeViewExplorer.xaml.cs">
+      <DependentUpon>TreeViewExplorer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\OxyPlot\BarChart.xaml.cs">
       <DependentUpon>BarChart.xaml</DependentUpon>
     </Compile>
@@ -193,7 +196,7 @@
     <Compile Include="Control\Monitor\IOMonitor08.xaml.cs">
       <DependentUpon>IOMonitor08.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\ResourceDictionary\LineChart.xaml.cs">
+    <Compile Include="Control\OxyPlot\LineChart.xaml.cs">
       <DependentUpon>LineChart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\LiveChart\LineChartBasic.xaml.cs">
@@ -229,6 +232,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Control\Manager\TreeViewExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\OxyPlot\BarChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -249,7 +256,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\ResourceDictionary\LineChart.xaml">
+    <Page Include="Control\OxyPlot\LineChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -277,6 +284,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Control\ResourceDictionary\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

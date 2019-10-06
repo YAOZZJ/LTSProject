@@ -2,6 +2,7 @@
   <Application.Resources>
     <ResourceDictionary>
       <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Project.ViewModel" />
+            <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource for_scrollviewer}"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Fluent;Component/Themes/Generic.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
@@ -9,7 +10,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
                 <ResourceDictionary Source="Control/ResourceDictionary/IOButton.xaml"/>
+                <ResourceDictionary Source="Control/ResourceDictionary/ScrollViewer.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
+     </ResourceDictionary>
   </Application.Resources>
 </Application>

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Project.Control.Manager.TreeViewExplorer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project.Control.Manager"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d">
+    <Grid>
+        <TreeView>
+            <materialDesign:TreeViewAssist.AdditionalTemplate>
+                <DataTemplate>
+                    <materialDesign:ColorZone
+                        Mode="PrimaryLight"
+                        CornerRadius="6">
+                        <TextBlock
+                            FontSize="10"
+                            Margin="8 1 8 1">
+                            TextBlock
+                        </TextBlock>
+                    </materialDesign:ColorZone>
+                </DataTemplate>
+            </materialDesign:TreeViewAssist.AdditionalTemplate>
+            <TreeViewItem Header="Root">
+                <TreeViewItem Header="Level1">
+                    <TreeViewItem Header="Level2">
+                        <TreeViewItem Header="1" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="2" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="3" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="4" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="5" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="6" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="7" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="8" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="Level2">
+                        <TreeViewItem Header="1" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="2" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="3" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="4" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="5" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="6" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="7" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                        <TreeViewItem Header="8" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}" />
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="Level1" materialDesign:TreeViewAssist.AdditionalTemplate="{x:Static materialDesign:TreeViewAssist.SuppressAdditionalTemplate}">
+                    <TreeViewItem Header="Level2">
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                        <TreeViewItem Header="Items"/>
+                    </TreeViewItem>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</UserControl>

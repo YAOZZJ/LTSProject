@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Project.View"
         xmlns:ctrl="clr-namespace:Project.Control"
         xmlns:ctrlLvc="clr-namespace:Project.Control.LiveChart"
+        xmlns:ctrlmanager="clr-namespace:Project.Control.Manager"
         xmlns:ctrlmonitor="clr-namespace:Project.Control.Monitor"
         xmlns:ctrlgridview="clr-namespace:Project.Control.GridView"
         xmlns:ctrlothers="clr-namespace:Project.Control.Others"
@@ -20,6 +21,9 @@
                      WindowStyle="None"
                      DataContext="{Binding Source={StaticResource Locator},Path=Main}"
                      >
+    <Fluent:RibbonWindow.Resources>
+        <!--<Style TargetType="ScrollViewer"></Style>-->
+    </Fluent:RibbonWindow.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -117,6 +121,54 @@
             </avalondock:DockingManager.Theme>
             <avalondock:LayoutRoot>
                 <avalondock:LayoutPanel >
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" FloatingWidth="500">
+                        <avalondock:LayoutAnchorablePane>
+                            <avalondock:LayoutAnchorable Title="Explorer">
+                                <ctrlmanager:TreeViewExplorer></ctrlmanager:TreeViewExplorer>
+                            </avalondock:LayoutAnchorable>
+                            <avalondock:LayoutAnchorable Title="Color">
+                                <ctrlothers:Color></ctrlothers:Color>
+                            </avalondock:LayoutAnchorable>
+                        </avalondock:LayoutAnchorablePane>
+                    </avalondock:LayoutAnchorablePaneGroup>
+                    <avalondock:LayoutPanel Orientation="Vertical">
+                        <avalondock:LayoutDocumentPaneGroup Orientation="Horizontal">
+                            <avalondock:LayoutDocumentPane>
+                                <avalondock:LayoutDocument Title="Debug">
+                                </avalondock:LayoutDocument>
+                                <avalondock:LayoutDocument Title="Main">
+                                </avalondock:LayoutDocument>
+                            </avalondock:LayoutDocumentPane>
+                        </avalondock:LayoutDocumentPaneGroup>
+                        <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
+                            <avalondock:LayoutAnchorablePane>
+                                <avalondock:LayoutAnchorable Title="Output">
+                                    <TextBlock/>
+                                </avalondock:LayoutAnchorable>
+                                <avalondock:LayoutAnchorable Title="Messages">
+                                    <Grid DataContext="{Binding Source={StaticResource Locator},
+                                        Path=NLogGridVIew,UpdateSourceTrigger=PropertyChanged}">
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="15">
+                                            <Grid>
+                                                <TextBlock>666</TextBlock>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            </Grid>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
+                                            <GridSplitter Width="2"/>
+                                        </StackPanel>
+                                        <ctrlgridview:LogDataGrid Margin="0,35,0,0"></ctrlgridview:LogDataGrid>
+                                    </Grid>
+                                </avalondock:LayoutAnchorable>
+                            </avalondock:LayoutAnchorablePane>
+                        </avalondock:LayoutAnchorablePaneGroup>
+                    </avalondock:LayoutPanel>
                     <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="150" FloatingWidth="100">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="BarChart">
@@ -127,7 +179,6 @@
                                               Name="ScrIO">
                                     <StackPanel Orientation="Vertical">
                                         <StackPanel Orientation="Horizontal">
-
                                         </StackPanel>
                                         <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=ScrIO,Path=ActualWidth,Mode=Default}">
                                             <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
@@ -151,53 +202,7 @@
                             </avalondock:LayoutAnchorable>
                         </avalondock:LayoutAnchorablePane>
                     </avalondock:LayoutAnchorablePaneGroup>
-                    <avalondock:LayoutPanel Orientation="Vertical">
-                        <avalondock:LayoutDocumentPaneGroup Orientation="Horizontal">
-                            <avalondock:LayoutDocumentPane>
-                                <avalondock:LayoutDocument Title="Debug">
-                                </avalondock:LayoutDocument>
-                                <avalondock:LayoutDocument Title="Main">
-                                </avalondock:LayoutDocument>
-                            </avalondock:LayoutDocumentPane>
-                        </avalondock:LayoutDocumentPaneGroup>
-                        <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
-                            <avalondock:LayoutAnchorablePane>
-                                <avalondock:LayoutAnchorable Title="Messages">
-                                    <Grid DataContext="{Binding Source={StaticResource Locator},
-                                        Path=NLogGridVIew,UpdateSourceTrigger=PropertyChanged}">
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="15">
-                                            <Grid>
-                                                <TextBlock>666</TextBlock>
-                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
-                                            </Grid>
-                                            <GridSplitter Width="2"/>
-                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
-                                            <GridSplitter Width="2"/>
-                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
-                                            <GridSplitter Width="2"/>
-                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
-                                            <GridSplitter Width="2"/>
-                                            <ToggleButton Style="{StaticResource TransparentToggleButtonButtonStyle}" Width="50"/>
-                                            <GridSplitter Width="2"/>
-                                        </StackPanel>
-                                        <ctrlgridview:LogDataGrid Margin="0,35,0,0"></ctrlgridview:LogDataGrid>
-                                    </Grid>
-                                </avalondock:LayoutAnchorable>
-                                <avalondock:LayoutAnchorable Title="Output">
-                                    <TextBlock/>
-                                </avalondock:LayoutAnchorable>
-                            </avalondock:LayoutAnchorablePane>
-                        </avalondock:LayoutAnchorablePaneGroup>
-                    </avalondock:LayoutPanel>
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" FloatingWidth="500">
-                        <avalondock:LayoutAnchorablePane>
-                            <avalondock:LayoutAnchorable Title="GridView">
-                            </avalondock:LayoutAnchorable>
-                            <avalondock:LayoutAnchorable Title="Color">
-                                <ctrlothers:Color></ctrlothers:Color>
-                            </avalondock:LayoutAnchorable>
-                        </avalondock:LayoutAnchorablePane>
-                    </avalondock:LayoutAnchorablePaneGroup>
+
                 </avalondock:LayoutPanel>
             </avalondock:LayoutRoot>
         </avalondock:DockingManager>
