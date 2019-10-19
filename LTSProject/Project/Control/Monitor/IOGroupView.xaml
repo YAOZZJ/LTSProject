@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Project.Control.Monitor.IOGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project.Control.Monitor"
+             xmlns:base="clr-namespace:Project.Control.Monitor.Base"
+             mc:Ignorable="d" 
+             DataContext="{Binding}"
+             Width="200">
+    <Grid>
+        <!--<materialDesign:Card>-->
+        <!--xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"-->
+        <StackPanel>
+                <TextBlock Text="{Binding Name}" Background="Black" Foreground="AliceBlue" HorizontalAlignment="Stretch"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="I/O" Background="Black" Foreground="AliceBlue" Width="30"/>
+                    <TextBlock Text="Description" Background="Black" Foreground="AliceBlue" Width="170"/>
+                </StackPanel>
+                <ListBox ItemsSource="{Binding IOCells}" Background="White" >
+                    <ListBox.Resources>
+                        <HierarchicalDataTemplate DataType="{x:Type base:IOCell}">
+                            <StackPanel Orientation="Horizontal">
+                            <!--<ToggleButton IsChecked="{Binding IsSelected}" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"/>-->
+                            <ToggleButton IsChecked="{Binding IsSelected}"/>
+                                    <TextBox Text="{Binding Name}"/>
+                            <!--<Rectangle Fill="Yellow" Height="20" Width="40"/>-->
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </ListBox.Resources>
+                </ListBox>
+            </StackPanel>
+        <!--</materialDesign:Card>-->
+    </Grid>
+</UserControl>

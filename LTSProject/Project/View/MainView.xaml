@@ -121,7 +121,7 @@
             </avalondock:DockingManager.Theme>
             <avalondock:LayoutRoot>
                 <avalondock:LayoutPanel >
-                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="300" FloatingWidth="500">
+                    <avalondock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="200" FloatingWidth="200">
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="Explorer">
                                 <ctrlmanager:TreeViewExplorer></ctrlmanager:TreeViewExplorer>
@@ -140,7 +140,7 @@
                                 </avalondock:LayoutDocument>
                             </avalondock:LayoutDocumentPane>
                         </avalondock:LayoutDocumentPaneGroup>
-                        <avalondock:LayoutAnchorablePaneGroup DockHeight="300" FloatingHeight="300">
+                        <avalondock:LayoutAnchorablePaneGroup DockHeight="200" FloatingHeight="200">
                             <avalondock:LayoutAnchorablePane>
                                 <avalondock:LayoutAnchorable Title="Output">
                                     <TextBlock/>
@@ -180,16 +180,7 @@
                                     <StackPanel Orientation="Vertical">
                                         <StackPanel Orientation="Horizontal">
                                         </StackPanel>
-                                        <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=ScrIO,Path=ActualWidth,Mode=Default}">
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                            <ctrlmonitor:IOMonitor08 Margin="5,5,5,5"/>
-                                        </WrapPanel>
+                                        <ctrlmonitor:IOMonitor/>
                                     </StackPanel>
                                 </ScrollViewer>
                             </avalondock:LayoutAnchorable>
@@ -207,7 +198,7 @@
             </avalondock:LayoutRoot>
         </avalondock:DockingManager>
         <Fluent:StatusBar Grid.Row="2">
-            <Fluent:StatusBarItem  HorizontalAlignment="Left">
+            <Fluent:StatusBarItem  HorizontalAlignment="Left" Title="Status">
                 <StackPanel Orientation="Horizontal">
                     <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" 
                              Background="AliceBlue"
@@ -216,7 +207,7 @@
                 </StackPanel>
             </Fluent:StatusBarItem>
             <Separator HorizontalAlignment="Left"/>
-            <Fluent:StatusBarItem HorizontalAlignment="Left">
+            <Fluent:StatusBarItem HorizontalAlignment="Left" Title="Process and Message">
                 <StackPanel Orientation="Horizontal">
                     <ProgressBar x:Name="ProgressMain" Value="25" Height="10" Width="100"
                                  IsIndeterminate="True"/>
@@ -227,7 +218,7 @@
                 </StackPanel>
             </Fluent:StatusBarItem>
             <Separator HorizontalAlignment="Left"/>
-            <Fluent:StatusBarItem HorizontalAlignment="Right">
+            <Fluent:StatusBarItem HorizontalAlignment="Right" Title="Icon">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock/>
                     <materialDesign:PackIcon Kind="React" />

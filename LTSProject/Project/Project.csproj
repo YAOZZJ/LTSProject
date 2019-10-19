@@ -178,9 +178,21 @@
     <Compile Include="Control\GridView\LogDataGrid.xaml.cs">
       <DependentUpon>LogDataGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\Manager\DBBrowser.xaml.cs">
+      <DependentUpon>DBBrowser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\Manager\TreeViewExplorer.xaml.cs">
       <DependentUpon>TreeViewExplorer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\Monitor\Base\IOCell.cs" />
+    <Compile Include="Control\Monitor\IOGroupView.xaml.cs">
+      <DependentUpon>IOGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Monitor\IOItem.cs" />
+    <Compile Include="Control\Monitor\IOMonitor.xaml.cs">
+      <DependentUpon>IOMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Monitor\IOMonitorViewModel.cs" />
     <Compile Include="Control\OxyPlot\BarChart.xaml.cs">
       <DependentUpon>BarChart.xaml</DependentUpon>
     </Compile>
@@ -192,9 +204,6 @@
     </Compile>
     <Compile Include="Control\GridView\GridViewControl.xaml.cs">
       <DependentUpon>GridViewControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Monitor\IOMonitor08.xaml.cs">
-      <DependentUpon>IOMonitor08.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\OxyPlot\LineChart.xaml.cs">
       <DependentUpon>LineChart.xaml</DependentUpon>
@@ -218,6 +227,8 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Service\INLogGridViewService.cs" />
     <Compile Include="Service\NLogGridViewService.cs" />
+    <Compile Include="Unitities\Database\IDataBase.cs" />
+    <Compile Include="Unitities\Database\SqliteDatabase.cs" />
     <Compile Include="Unitities\Output.cs" />
     <Compile Include="Unitities\SQLiteHelper.cs" />
     <Compile Include="ViewModel\DebugViewModel.cs" />
@@ -232,7 +243,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Control\Manager\DBBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\Manager\TreeViewExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Monitor\IOGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Monitor\IOMonitor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,10 +272,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\GridView\GridViewControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Control\Monitor\IOMonitor08.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,7 +346,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Control\Docker\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

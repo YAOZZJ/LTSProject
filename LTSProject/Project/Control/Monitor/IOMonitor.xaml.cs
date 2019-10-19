@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Project.Control.Monitor
 {
     /// <summary>
-    /// IOMonitor08.xaml 的交互逻辑
+    /// IOMonitor.xaml 的交互逻辑
     /// </summary>
-    public partial class IOMonitor08 : UserControl
+    public partial class IOMonitor : UserControl
     {
-        public IOMonitor08()
+        public IOMonitor()
         {
             InitializeComponent();
         }
