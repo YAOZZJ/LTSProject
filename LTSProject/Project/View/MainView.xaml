@@ -102,17 +102,6 @@
                     <Fluent:ToggleButton>T5</Fluent:ToggleButton>
                     <Fluent:ToggleButton>T6</Fluent:ToggleButton>
                 </Fluent:RibbonGroupBox>
-                <Fluent:RibbonGroupBox Header="Debug2">
-                    <Fluent:Button x:Name="BtnDebugX1" Size="Middle" Click="BtnDebug1_Click">BX1</Fluent:Button>
-                    <Fluent:Button x:Name="BtnDebugX2" Size="Middle" Click="BtnDebug2_Click">BX2</Fluent:Button>
-                    <Fluent:Button x:Name="BtnDebugX3" Size="Middle" Click="BtnDebug3_Click">BX3</Fluent:Button>
-                    <Fluent:Button x:Name="BtnDebugX4" Size="Middle" Click="BtnDebug4_Click">BX4</Fluent:Button>
-                    <Fluent:Button x:Name="BtnDebugX5" Size="Middle" Click="BtnDebug5_Click">BX5</Fluent:Button>
-                    <Fluent:Button x:Name="BtnDebugX6" Size="Middle" Click="BtnDebug6_Click">BX6</Fluent:Button>
-                    <Fluent:TextBox x:Name="TxtDebugX1" Width="200"></Fluent:TextBox>
-                    <Fluent:TextBox x:Name="TxtDebugX2" Width="200"></Fluent:TextBox>
-                    <Fluent:TextBox x:Name="TxtDebugX3" Width="200"></Fluent:TextBox>
-                </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
         <avalondock:DockingManager x:Name="DockManager" Grid.Row="1">
@@ -143,7 +132,7 @@
                         <avalondock:LayoutAnchorablePaneGroup DockHeight="200" FloatingHeight="200">
                             <avalondock:LayoutAnchorablePane>
                                 <avalondock:LayoutAnchorable Title="Output">
-                                    <TextBlock/>
+                                    <ctrlmanager:OutputControl/>
                                 </avalondock:LayoutAnchorable>
                                 <avalondock:LayoutAnchorable Title="Messages">
                                     <Grid DataContext="{Binding Source={StaticResource Locator},

@@ -101,6 +101,12 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.3.0.0-ci550\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.0.1\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
@@ -148,6 +154,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -180,6 +187,9 @@
     </Compile>
     <Compile Include="Control\Manager\DBBrowser.xaml.cs">
       <DependentUpon>DBBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Manager\OutputControl.xaml.cs">
+      <DependentUpon>OutputControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Manager\TreeViewExplorer.xaml.cs">
       <DependentUpon>TreeViewExplorer.xaml</DependentUpon>
@@ -223,27 +233,32 @@
     <Compile Include="Model\DebugModel.cs" />
     <Compile Include="Model\NLogItem.cs" />
     <Compile Include="Model\Product.cs" />
-    <Compile Include="Repositories\IOutputRepository.cs" />
+    <Compile Include="Unitities\Comment\CommentMethod.cs" />
     <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Service\INLogGridViewService.cs" />
-    <Compile Include="Service\NLogGridViewService.cs" />
     <Compile Include="Unitities\Database\IDataBase.cs" />
     <Compile Include="Unitities\Database\SqliteDatabase.cs" />
-    <Compile Include="Unitities\Output.cs" />
-    <Compile Include="Unitities\SQLiteHelper.cs" />
+    <Compile Include="Unitities\File\FileCtrl.cs" />
+    <Compile Include="Unitities\Log\MyTraceListener.cs" />
+    <Compile Include="Unitities\Log\ILog.cs" />
+    <Compile Include="Unitities\Log\LogItem.cs" />
+    <Compile Include="Unitities\Log\NLogService.cs" />
+    <Compile Include="Unitities\Log\TraceLog.cs" />
+    <Compile Include="Unitities\Mvvm\ViewModelBase.cs" />
     <Compile Include="ViewModel\DebugViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\NLogGridViewViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainViewDebug.cs" />
     <Page Include="Control\GridView\LogDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\Manager\DBBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Manager\OutputControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -348,6 +363,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Control\Docker\" />
+    <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
