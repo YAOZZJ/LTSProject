@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using NLog.Fluent;
 using Project.Control;
 using Project.Model;
 using Project.Unitities;

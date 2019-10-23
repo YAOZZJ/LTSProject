@@ -22,15 +22,15 @@ namespace Project.Unitities.File
         public static string OpenFile(string inidir = null,string filter = null)
         {
             string path = null;
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Multiselect = false;
-            openFileDialog.Filter = filter;
-            //openFileDialog.Filter = "SQLite3 File|*.sqlite3;*.db3|Database File|*.db" + "|All Files|*.*";
-            if(inidir != null) openFileDialog.InitialDirectory = inidir;
-            if ((bool)openFileDialog.ShowDialog())
-            {
-                path = openFileDialog.FileName;
-            }
+            //Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            //openFileDialog.Multiselect = false;
+            //openFileDialog.Filter = filter;
+            ////openFileDialog.Filter = "SQLite3 File|*.sqlite3;*.db3|Database File|*.db" + "|All Files|*.*";
+            //if(inidir != null) openFileDialog.InitialDirectory = inidir;
+            //if ((bool)openFileDialog.ShowDialog())
+            //{
+            //    path = openFileDialog.FileName;
+            //}
             return path;
         }
 
@@ -608,14 +608,16 @@ namespace Project.Unitities.File
         {
             string filename = System.IO.Path.GetFileName(fullPath);//文件名  “Default.aspx”
             string extension = System.IO.Path.GetExtension(fullPath);//扩展名 “.aspx”
+            string returnname;
             string fileNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(fullPath);// 没有扩展名的文件名 “Default”
             switch(mode)
             {
-                case 1: return filename;break;
-                case 2: return extension; break;
-                case 3: return fileNameWithoutExtension; break;
-                default: return filename; break;
+                case 1: returnname = filename;break;
+                case 2: returnname = extension; break;
+                case 3: returnname = fileNameWithoutExtension; break;
+                default: returnname = filename; break;
             }
+            return returnname;
         }
         #endregion
 
