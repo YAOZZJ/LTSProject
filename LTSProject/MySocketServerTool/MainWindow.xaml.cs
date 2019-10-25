@@ -24,5 +24,10 @@ namespace MySocketServerTool
         {
             InitializeComponent();
         }
+
+        private void TxtOutput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TxtOutput.ScrollToEnd();
+        }
     }
 }

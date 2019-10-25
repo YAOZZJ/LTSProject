@@ -86,6 +86,10 @@ namespace MyToolkits.Log.TraceLog
         {
             System.Diagnostics.Debug.WriteLine(LogFormat(msg, level, logger));
         }
+        public static void WriteLine(string msg, string level = "Info", string logger = "Default")
+        {
+            System.Diagnostics.Debug.WriteLine(LogFormat(msg, level, logger));
+        }
         static string LogFormat(string msg, string level = "Info", string logger = "Default")
         {
             return $"{DateTime.Now.ToString(" HH:mm:ss:ms")} | {level} | {logger} | {msg}";

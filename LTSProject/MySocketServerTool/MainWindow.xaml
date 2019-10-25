@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MySocketServerTool"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
-        Title="{Binding MessageCurrent,StringFormat=SocketServer◆◆{0}◆◆}" Height="700" Width="400">
+        Title="{Binding MessageCurrent,StringFormat=SocketServer◆◆{0}◆◆}" SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,6 +17,7 @@
             
         </TabControl>
         <TextBox Text="{Binding MessageAll}" IsReadOnly="True" Height="200" Grid.Row="1"
+                 Name="TxtOutput" TextChanged="TxtOutput_TextChanged"
                  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
         <StackPanel Orientation="Horizontal" Grid.Row="2">
             <Button Command="{Binding Command1}" Margin="0 0 5 0" Height="30">Button1</Button>

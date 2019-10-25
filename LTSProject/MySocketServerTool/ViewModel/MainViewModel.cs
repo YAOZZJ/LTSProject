@@ -1,7 +1,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using MySocketServerTool.Services;
 using MyToolkits.Log.TraceLog;
-using MyToolkits.Socket.SuperSocketServer;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
@@ -18,17 +18,20 @@ namespace MySocketServerTool.ViewModel
             _trace = new MyTraceListener();
             Trace.Listeners.Add(_trace);
             _trace.PropertyChanged += traceOnPropertyChanged;
-            _server = new Server();
+
+            //_server = new SimpleServer();
+            _bootstrap = new MyBootstrap();
+
         }
 
         #region "Action"
         void Action1()
         {
-            Message(MethodBase.GetCurrentMethod().Name);
+            _server.Start();
         }
         void Action2()
         {
-            Message(MethodBase.GetCurrentMethod().Name);
+            _server.Stop();
         }
         void Action3()
         {
@@ -52,7 +55,7 @@ namespace MySocketServerTool.ViewModel
         }
         void Message(string msg)
         {
-            TraceLog.Output(msg);
+            TraceLog.WriteLine(msg);
         }
         void traceOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -67,7 +70,8 @@ namespace MySocketServerTool.ViewModel
         string _messageAll;
         string _inputText;
         MyTraceListener _trace;
-        Server _server;
+        SimpleServer _server;
+        MyBootstrap _bootstrap;
         public string MessageCurrent { get => _message; set => Set(ref _message, value); }
         public string MessageAll { get => _messageAll; set => Set(ref _messageAll, value); }
         public string InputText { get => _inputText; set => Set(ref _inputText, value); }
