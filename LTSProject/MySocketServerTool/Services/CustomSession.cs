@@ -5,6 +5,12 @@ using System;
 
 namespace MySocketServerTool.Services
 {
+    /// <summary>
+    /// 节点相关操作;
+    /// 节点启动
+    /// 不明请求
+    /// 节点断开
+    /// </summary>
     public class CustomSession : AppSession<CustomSession>
     {
         protected override void OnSessionStarted()

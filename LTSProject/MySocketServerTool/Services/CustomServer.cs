@@ -22,8 +22,19 @@ namespace MySocketServerTool.Services
         /// <returns></returns>
         protected override bool Setup(IRootConfig rootConfig, IServerConfig config)
         {
+            //this.NewRequestReceived += CustomServer_NewRequestReceived;
             return base.Setup(rootConfig, config);
         }
+        /// <summary>
+        /// 与Command互斥
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="requestInfo"></param>
+        private void CustomServer_NewRequestReceived(CustomSession session, SuperSocket.SocketBase.Protocol.StringRequestInfo requestInfo)
+        {
+            TraceLog.WriteLine("CustomServer_NewRequestReceived...", logger: _logger);
+        }
+
         /// <summary>
         /// 服务启动前
         /// </summary>
