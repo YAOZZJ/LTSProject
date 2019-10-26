@@ -16,11 +16,12 @@ namespace MySocketServerTool.Services
         public MyBootstrap()
         {
             _bootstrap = BootstrapFactory.CreateBootstrap();
-            if (_bootstrap.Initialize()) TraceLog.WriteLine("Initialize");
-            else { TraceLog.WriteLine("Initialize failed"); return; }
-            var result = _bootstrap.Start();
-            TraceLog.WriteLine("Start " + result.ToString());
-            //TcpServerInital();
+            _bootstrap.Initialize();
+            _bootstrap.Start();
+            //if (_bootstrap.Initialize()) TraceLog.WriteLine("Initialize");
+            //else { TraceLog.WriteLine("Initialize failed"); return; }
+            //var result = _bootstrap.Start();
+            //TraceLog.WriteLine("Start " + result.ToString());
         }
         IBootstrap _bootstrap;
     }

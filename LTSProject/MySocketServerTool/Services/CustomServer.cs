@@ -1,7 +1,8 @@
 ﻿using MyToolkits.Log.TraceLog;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Config;
-
+using SuperSocket.SocketBase.Protocol;
+using System.Text;
 
 namespace MySocketServerTool.Services
 {
@@ -14,6 +15,11 @@ namespace MySocketServerTool.Services
     /// </summary>
     public class CustomServer : AppServer<CustomSession>
     {
+        public CustomServer()
+            //: base(new CommandLineReceiveFilterFactory(Encoding.Default, new BasicRequestInfoParser(":", ",")))
+        {
+
+        }
         /// <summary>
         /// 配置 Server
         /// </summary>

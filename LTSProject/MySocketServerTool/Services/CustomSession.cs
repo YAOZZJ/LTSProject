@@ -20,7 +20,6 @@ namespace MySocketServerTool.Services
 
         protected override void HandleUnknownRequest(StringRequestInfo requestInfo)
         {
-            //this.Send("Unknow request");
             base.HandleUnknownRequest(requestInfo);
         }
 
