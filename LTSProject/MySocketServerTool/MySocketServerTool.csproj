@@ -116,7 +116,8 @@
     </ApplicationDefinition>
     <Compile Include="Command\ADD.cs" />
     <Compile Include="Command\ECHO.cs" />
-    <Compile Include="Command\FINS.cs" />
+    <Compile Include="Command\FinsHandShaking.cs" />
+    <Compile Include="Command\FinsRWData.cs" />
     <Compile Include="Command\LOGIN.cs" />
     <Compile Include="Filter\FinsTcpReceiveFilter.cs" />
     <Compile Include="PackageInfo\FinsTcpPackageInfo.cs" />
@@ -191,6 +192,10 @@
     <ProjectReference Include="..\MyToolkits.Socket.SuperSocketServer\MyToolkits.Socket.SuperSocketServer.csproj">
       <Project>{39ede77e-4a8f-4386-829a-1ce010ca8375}</Project>
       <Name>MyToolkits.Socket.SuperSocketServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.Unitities.Conversion\MyToolkits.Unitities.Conversion.csproj">
+      <Project>{d86c7440-d24a-492d-89b6-209680db1f69}</Project>
+      <Name>MyToolkits.Unitities.Conversion</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

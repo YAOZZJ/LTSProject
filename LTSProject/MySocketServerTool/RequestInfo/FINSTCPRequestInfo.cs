@@ -1,18 +1,14 @@
-﻿using SuperSocket.SocketBase.Protocol;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿//using MyToolkits.Unitities.Conversion;
+using SuperSocket.SocketBase.Protocol;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MySocketServerTool.RequestInfo
 {
     /// <summary>
-    /// 把ReceiveFilter解析的数据拆分
+    /// 把ReceiveFilter解析的数据拆分,解析
     /// </summary>
     public class FinsTcpRequestInfo : IRequestInfo
     {
-        #region "Fins"
         /*
              名称       大小     data                           备注
          1+ Header    +    4+ 46494E53+ 46494E53 + 46494E53 + FINS
@@ -35,79 +31,112 @@ namespace MySocketServerTool.RequestInfo
         18|  Address  |    3|         | 000000   |    000000|
         19|  Number   |    2|         | 0001     |      0002|
         20|  Data     |     |         | 000A     |          |
-         
-        public FinsTcpRequestInfo(byte[] header, byte[] body)
-        {
-            Header = header;
-            Length[0] = body[00];
-            Length[1] = body[01];
-            Length[2] = body[02];
-            Length[3] = body[03];
-            Command[0] = body[04];
-            Command[1] = body[05];
-            Command[2] = body[06];
-            Command[3] = body[07];
-            ErrorCode[0] = body[08];
-            ErrorCode[1] = body[09];
-            ErrorCode[2] = body[10];
-            ErrorCode[3] = body[11];
-            ICF = body[12];
-            RSV = body[13];
-            GCT = body[14];
-            DNA = body[15];
-            DA1 = body[16];
-            DA2 = body[17];
-            SNA = body[18];
-            SA1 = body[19];
-            SA2 = body[20];
-            SID = body[21];
-            MRC = body[22];
-            SRC = body[23];
-            Area = body[24];
-            Address[0] = body[25];
-            Address[1] = body[26];
-            Address[2] = body[27];
-            Number[0] = body[28];
-            Number[1] = body[29];
-
-            for (int i = 29; i < body.Length; i++) Data[i - 29] = body[i];
-
-        }
         */
-        #region "Data"
-        /*
-    public byte[] Header { get; set; }
-    public byte[] Length { get; set; }
-    public byte[] Command { get; set; }
-    public byte[] ErrorCode { get; set; }
-    public byte ICF { get; set; }
-    public byte RSV { get; set; }
-    public byte GCT { get; set; }
-    public byte DNA { get; set; }
-    public byte DA1 { get; set; }
-    public byte DA2 { get; set; }
-    public byte SNA { get; set; }
-    public byte SA1 { get; set; }
-    public byte SA2 { get; set; }
-    public byte SID { get; set; }
-    public byte MRC { get; set; }
-    public byte SRC { get; set; }
-    public byte Area { get; set; }
-    public byte[] Address { get; set; }
-    public byte[] Number { get; set; }
-    public byte[] Data { get; set; }
-
-    public string Key => throw new NotImplementedException();
-    */
-        #endregion "Data"
-        #endregion "Fins"
         public FinsTcpRequestInfo(byte[] header, byte[] body)
         {
-            Key = ((header[0] * 256) + header[1]).ToString();
-            Key = "FINS";
-            Body = System.Text.Encoding.UTF8.GetString(body, 0, body.Length);
+            Header       = new byte[4];
+            Length       = new byte[4];
+            Command      = new byte[4];
+            ErrorCode    = new byte[4];
+            Address      = new byte[3];
+            Number       = new byte[2];
+
+            Header[0]    =  header[00];
+            Header[1]    =  header[01];
+            Header[2]    =  header[02];
+            Header[3]    =  header[03];
+
+            if (Encoding.Default.GetString(Header) != "FINS") { Key = "UnRegisteredCMD"; return; }
+
+            Length[0]    =  header[04];
+            Length[1]    =  header[05];
+            Length[2]    =  header[06];
+            Length[3]    =  header[07];
+            Command[0]   =  body[00];
+            Command[1]   =  body[01];
+            Command[2]   =  body[02];
+            Command[3]   =  body[03];
+            ErrorCode[0] =  body[04];
+            ErrorCode[1] =  body[05];
+            ErrorCode[2] =  body[06];
+            ErrorCode[3] =  body[07];
+
+            switch(Command[3])//准确来说应该是Conversion.AryByteTo<int>(Command)
+            {
+                case 0: Key = "FinsHandShaking";return;
+                case 2: Key = "FinsRWData";break;
+                default: Key = "UnRegisteredCMD";return;
+            }
+
+            if (body.Length < 26) { Key = "UnRegisteredCMD"; return; }
+
+            ICF =  body[08];
+            RSV          =  body[09];
+            GCT          =  body[10];
+            DNA          =  body[11];
+            DA1          =  body[12];
+            DA2          =  body[13];
+            SNA          =  body[14];
+            SA1          =  body[15];
+            SA2          =  body[16];
+            SID          =  body[17];
+            MRC          =  body[18];
+            SRC          =  body[19];
+            Area         =  body[20];
+            Address[0]   =  body[21];
+            Address[1]   =  body[22];
+            Address[2]   =  body[23];
+            Number[0]    =  body[24];
+            Number[1]    =  body[25];
+
+            Data = new byte[body.Length - 26];
+            for (int i = 26;i < body.Length; i++) Data[i - 26] = body[i];
+
+            //Key = "FINS";
+            //Body = body;
         }
-        public string Key { get; set; }
-        public string Body { get; set; }
+        public string  Key       {get;set;}
+        public byte[]  Body      {get;set;}
+        public byte[]  Header    {get;set;}
+        public byte[]  Length    {get;set;}
+        public byte[]  Command   {get;set;}
+        public byte[]  ErrorCode {get;set;}
+        public byte    ICF       {get;set;}
+        public byte    RSV       {get;set;}
+        public byte    GCT       {get;set;}
+        public byte    DNA       {get;set;}
+        public byte    DA1       {get;set;}
+        public byte    DA2       {get;set;}
+        public byte    SNA       {get;set;}
+        public byte    SA1       {get;set;}
+        public byte    SA2       {get;set;}
+        public byte    SID       {get;set;}
+        public byte    MRC       {get;set;}
+        public byte    SRC       {get;set;}
+        public byte    Area      {get;set;}
+        public byte[]  Address   {get;set;}
+        public byte[]  Number    {get;set;}
+        public byte[]  Data      {get;set;}
+
+    }
+    public enum MemoryArea
+    {
+        CIOBit                       = 0x30,
+        WRBit                        = 0x31,
+        HRBit                        = 0x32,
+        ARBit                        = 0x33,
+        CIOWord                      = 0xb0,
+        WRWord                       = 0xb1,
+        HRWord                       = 0xb2,
+        ARWord                       = 0xb3,
+        TimerCounterCompletionFlag   = 0x09,
+        TimerCounterPV               = 0x89,
+        DMBit                        = 0x02,
+        DMWord                       = 0x82,
+        TaskBit                      = 0x06,
+        TaskStatus                   = 0x46,
+        IndexRegisterPV              = 0xdc,
+        DataRegisterPV               = 0xbc,
+        ClockPulsesConditionFlagsBit = 0x07
     }
 }
