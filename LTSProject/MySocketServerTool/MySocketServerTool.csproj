@@ -116,15 +116,17 @@
     </ApplicationDefinition>
     <Compile Include="Command\ADD.cs" />
     <Compile Include="Command\ECHO.cs" />
+    <Compile Include="Command\FINS.cs" />
     <Compile Include="Command\LOGIN.cs" />
-    <Compile Include="Command\StrinsgRequestInfo.cs" />
     <Compile Include="Filter\FinsTcpReceiveFilter.cs" />
     <Compile Include="PackageInfo\FinsTcpPackageInfo.cs" />
     <Compile Include="RequestInfo\FinsTcpRequestInfo.cs" />
-    <Compile Include="Services\CustomServer.cs" />
-    <Compile Include="Services\CustomSession.cs" />
+    <Compile Include="Server\CustomServer.cs" />
+    <Compile Include="Server\FinsTcpServer.cs" />
+    <Compile Include="Session\CustomSession.cs" />
     <Compile Include="Services\MyBootstrap.cs" />
     <Compile Include="Services\SimpleServer.cs" />
+    <Compile Include="Session\FinsSession.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MySocketServerTool.RequestInfo
 {
+    /// <summary>
+    /// 把ReceiveFilter解析的数据拆分
+    /// </summary>
     public class FinsTcpRequestInfo : IRequestInfo
     {
         #region "Fins"
@@ -14,23 +17,23 @@ namespace MySocketServerTool.RequestInfo
              名称       大小     data                           备注
          1+ Header    +    4+ 46494E53+ 46494E53 + 46494E53 + FINS
          2|  Length   |    4|         | 0000001C | 0000001A | 20~2020
-         3|  Command  |    4| 00000002| 00000002 |         2|
-         4|  ErrorCode|    4| 00000000| 00000000 |         0| 不使用
+         3|  Command  |    4| 00000002| 00000002 |  00000002|
+         4|  ErrorCode|    4| 00000000| 00000000 |  00000000| 不使用
          5|  ICF      |    1| 80      | 80       |        80|
-         6|  RSV      |    1| 00      | 00       |         0|
-         7|  GCT      |    1| 02      | 02       |         2|
-         8|  DNA      |    1| 00      | 00       |         0| 00 为本地网络，1～127 为远程网络
-         9|  DA1      |    1|         | 01       |         1| 目标地址（目标PLC 以太网IP 最后一位）
-        10|  DA2      |    1|         | 00       |         0| 目标单元号 00 为CPU，如果是其他单元=HEX（10+Unit）
-        11|  SNA      |    1|         | 00       |         0| 源网络
-        12|  SA1      |    1|         | 0A       | 0A       | 源网络PLC 地址（本地PLC 以太网IP 最后一位）
-        13|  SA2      |    1|         | 00       |         0| 源PLC 单元号
-        14|  SID      |    1| 00      | 00       |         0|
-        15+  MRC      +    1+         + 01       +         1+
-        16+  SRC      +    1+         + 02       +         1+ 读:01 01 写01 02
+         6|  RSV      |    1| 00      | 00       |        00|
+         7|  GCT      |    1| 02      | 02       |        02|
+         8|  DNA      |    1| 00      | 00       |        00| 00 为本地网络，1～127 为远程网络
+         9|  DA1      |    1|         | 01       |        01| 目标地址（目标PLC 以太网IP 最后一位）
+        10|  DA2      |    1|         | 00       |        00| 目标单元号 00 为CPU，如果是其他单元=HEX（10+Unit）
+        11|  SNA      |    1|         | 00       |        00| 源网络
+        12|  SA1      |    1|         | 0A       |        0A| 源网络PLC 地址（本地PLC 以太网IP 最后一位）
+        13|  SA2      |    1|         | 00       |        00| 源PLC 单元号
+        14|  SID      |    1| 00      | 00       |        00|
+        15+  MRC      +    1+         + 01       +        01+
+        16+  SRC      +    1+         + 02       +        01+ 读:01 01 写01 02
         17|  Area     |    1|         | 82       |        82| DM(word)： 82,W(bit)： 31,W（word）： B1,CIO 区（bit）：
-        18|  Address  |    3|         | 000000   |         0|
-        19|  Number   |    2|         | 0001     |         2|
+        18|  Address  |    3|         | 000000   |    000000|
+        19|  Number   |    2|         | 0001     |      0002|
         20|  Data     |     |         | 000A     |          |
          
         public FinsTcpRequestInfo(byte[] header, byte[] body)
@@ -98,6 +101,13 @@ namespace MySocketServerTool.RequestInfo
     */
         #endregion "Data"
         #endregion "Fins"
-        public string Key => throw new NotImplementedException();
+        public FinsTcpRequestInfo(byte[] header, byte[] body)
+        {
+            Key = ((header[0] * 256) + header[1]).ToString();
+            Key = "FINS";
+            Body = System.Text.Encoding.UTF8.GetString(body, 0, body.Length);
+        }
+        public string Key { get; set; }
+        public string Body { get; set; }
     }
 }

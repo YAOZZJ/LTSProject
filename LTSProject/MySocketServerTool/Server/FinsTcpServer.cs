@@ -1,25 +1,21 @@
-﻿using MyToolkits.Log.TraceLog;
+﻿using MySocketServerTool.Filter;
+using MySocketServerTool.RequestInfo;
+using MySocketServerTool.Session;
+using MyToolkits.Log.TraceLog;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Config;
 using SuperSocket.SocketBase.Protocol;
-using System.Text;
 
-namespace MySocketServerTool.Services
+namespace MySocketServerTool.Server
 {
-    /// <summary>
-    /// 配置Server
-    /// 服务启动
-    /// 停止
-    /// 新链接
-    /// 新链接断开
-    /// </summary>
-    public class CustomServer : AppServer<CustomSession>
+    public class FinsTcpServer : AppServer<FinsSession,FinsTcpRequestInfo>
     {
-        public CustomServer()
-            //: base(new CommandLineReceiveFilterFactory(Encoding.Default, new BasicRequestInfoParser(":", ",")))
+        public FinsTcpServer()
+        : base(new DefaultReceiveFilterFactory<FinsTcpReceiveFilter, FinsTcpRequestInfo>())
         {
 
         }
+
         /// <summary>
         /// 配置 Server
         /// </summary>
@@ -46,7 +42,7 @@ namespace MySocketServerTool.Services
         /// </summary>
         protected override void OnStarted()
         {
-            TraceLog.WriteLine("Started...", logger : _logger);
+            TraceLog.WriteLine("Started...", logger: _logger);
             base.OnStarted();
         }
         /// <summary>
@@ -61,17 +57,17 @@ namespace MySocketServerTool.Services
         /// 新链接
         /// </summary>
         /// <param name="session"></param>
-        protected override void OnNewSessionConnected(CustomSession session)
+        protected override void OnNewSessionConnected(FinsSession session)
         {
             //TraceLog.WriteLine("新的连接加入，标识：" + session.SessionID);
             TraceLog.WriteLine($"新链接: { session.RemoteEndPoint.Address.ToString()} { session.RemoteEndPoint.Port.ToString()}", logger: _logger);
             base.OnNewSessionConnected(session);
         }
-        protected override void OnSessionClosed(CustomSession session, CloseReason reason)
+        protected override void OnSessionClosed(FinsSession session, CloseReason reason)
         {
             TraceLog.WriteLine($"链接断开: { session.RemoteEndPoint.Address.ToString()} { session.RemoteEndPoint.Port.ToString()} , {reason.ToString()}", logger: _logger);
             base.OnSessionClosed(session, reason);
         }
-        string _logger = "CustomServer";
+        string _logger = "FinsTcpServer";
     }
 }

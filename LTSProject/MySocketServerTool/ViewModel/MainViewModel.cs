@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MySocketServerTool.Services;
 using MyToolkits.Log.TraceLog;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
@@ -27,15 +28,21 @@ namespace MySocketServerTool.ViewModel
         #region "Action"
         void Action1()
         {
-            _server.Start();
+            //_server.Start();
         }
         void Action2()
         {
-            _server.Stop();
+            //_server.Stop();
         }
         void Action3()
         {
-            Message(MethodBase.GetCurrentMethod().Name);
+            byte[] a = { 1, 2, 3, 4, 15, 26, 37, 48 };
+            var b = new byte[4];
+            Array.Copy(a, 4, b, 0, 4);
+            foreach(byte x in b)
+            {
+                TraceLog.WriteLine(x.ToString());
+            }
         }
         void Action4()
         {

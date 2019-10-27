@@ -1,26 +1,20 @@
-﻿using MyToolkits.Log.TraceLog;
+﻿using MySocketServerTool.RequestInfo;
 using SuperSocket.SocketBase;
-using SuperSocket.SocketBase.Protocol;
 using System;
 
-namespace MySocketServerTool.Services
+namespace MySocketServerTool.Session
 {
-    /// <summary>
-    /// 节点相关操作;
-    /// 节点启动
-    /// 不明请求
-    /// 节点断开
-    /// </summary>
-    public class CustomSession : AppSession<CustomSession>
+    public class FinsSession : AppSession<FinsSession, FinsTcpRequestInfo>
     {
         protected override void OnSessionStarted()
         {
             this.Send("welecome to custom socket");
         }
 
-        protected override void HandleUnknownRequest(StringRequestInfo requestInfo)
+        protected override void HandleUnknownRequest(FinsTcpRequestInfo requestInfo)
         {
-            base.HandleUnknownRequest(requestInfo);
+            this.Send("UnknownRequest");
+            //base.HandleUnknownRequest(requestInfo);
         }
 
         protected override void HandleException(Exception e)
