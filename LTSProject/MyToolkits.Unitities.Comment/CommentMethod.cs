@@ -1,13 +1,13 @@
-﻿using System;
+﻿using MyToolkits.DataBase.Base;
+using MyToolkits.Log.NLogService;
+using System;
 using System.IO;
-using Project.Unitities.Database;
-using Project.Unitities.Log;
 
-namespace Project.Unitities.Comment
+namespace MyToolkits.Unitities.Comment
 {
     public class CommentMethod
     {
-        public static void CheckDatabasePath(IDataBase database,string path,string name)
+        public static void CheckDatabasePath(IDataBase database, string path, string name)
         {
             CheckAndCreatePath(path);
             if (!System.IO.File.Exists(Path.Combine(path, name)))
@@ -42,4 +42,5 @@ namespace Project.Unitities.Comment
             return System.Environment.CurrentDirectory;
         }
     }
+
 }

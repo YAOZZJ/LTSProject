@@ -75,7 +75,6 @@ namespace MySocketServerTool.ViewModel
         string _messageAll;
         string _inputText;
         MyTraceListener _trace;
-        SimpleServer _server;
         MyBootstrap _bootstrap;
         public string MessageCurrent { get => _message; set => Set(ref _message, value); }
         public string MessageAll { get => _messageAll; set => Set(ref _messageAll, value); }

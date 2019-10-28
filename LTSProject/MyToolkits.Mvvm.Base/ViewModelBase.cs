@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 
-namespace Project.Unitities.Mvvm
+namespace MyToolkits.Mvvm.Base
 {
-    public class ViewModelBaseSimple : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         protected void RaisePropertyChanged<T>(Expression<Func<T>> action)
         {
@@ -29,21 +29,21 @@ namespace Project.Unitities.Mvvm
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
-//    引用：
-//public class Person : ViewModelBase
-//    {
-//        private string _Name;
-//        /// <summary>
-//        /// 名字
-//        /// </summary>
-//        public string Name
-//        {
-//            get { return _Name; }
-//            set
-//            {
-//                _Name = value;
-//                RaisePropertyChanged(() => Name);
-//            }
-//        }
-//    }
+    //    引用：
+    //public class Person : ViewModelBase
+    //    {
+    //        private string _Name;
+    //        /// <summary>
+    //        /// 名字
+    //        /// </summary>
+    //        public string Name
+    //        {
+    //            get { return _Name; }
+    //            set
+    //            {
+    //                _Name = value;
+    //                RaisePropertyChanged(() => Name);
+    //            }
+    //        }
+    //    }
 }

@@ -1,12 +1,13 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using MyToolkits.DataBase.Base;
+using MyToolkits.DataBase.SqliteDataBase;
 using Project.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Controls;
-using Project.Unitities.Database;
 
 namespace Project.Control.Manager
 {
@@ -18,7 +19,7 @@ namespace Project.Control.Manager
         public DBBrowser()
         {
             InitializeComponent();
-            SqliteDatabase sqlite = new SqliteDatabase();
+            SqliteDataBase sqlite = new SqliteDataBase();
             this.DataContext = new DBBrowserViewModel(sqlite);
         }
         class DBBrowserViewModel:ViewModelBase

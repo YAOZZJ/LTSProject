@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyToolkits.DataBase.Base\MyToolkits.DataBase.Base.csproj" />
+    <ProjectReference Include="..\MyToolkits.Log.NLogService\MyToolkits.Log.NLogService.csproj" />
+  </ItemGroup>
+
+</Project>

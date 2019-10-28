@@ -328,9 +328,33 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Unitities\Unitities.csproj">
-      <Project>{375fe166-6ad3-4c9e-863d-fbe95ad343f7}</Project>
-      <Name>Unitities</Name>
+    <ProjectReference Include="..\MyToolkits.DataBase.Base\MyToolkits.DataBase.Base.csproj">
+      <Project>{74863942-13a0-4e70-ae4a-cb30d62053b3}</Project>
+      <Name>MyToolkits.DataBase.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.DataBase.SqliteDataBase\MyToolkits.DataBase.SqliteDataBase.csproj">
+      <Project>{0d790cb4-5ff4-46cc-b1ec-f16ebdea0311}</Project>
+      <Name>MyToolkits.DataBase.SqliteDataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.Log.Base\MyToolkits.Log.Base.csproj">
+      <Project>{f0ab9673-55e7-485a-bd5d-a0621b84bf34}</Project>
+      <Name>MyToolkits.Log.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.Log.NLogService\MyToolkits.Log.NLogService.csproj">
+      <Project>{0f86ba6f-813b-4dc0-aabe-7f5c6877d7a6}</Project>
+      <Name>MyToolkits.Log.NLogService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.Log.TraceLog\MyToolkits.Log.TraceLog.csproj">
+      <Project>{4ddd84e4-d659-4af3-873d-6005dd6d5864}</Project>
+      <Name>MyToolkits.Log.TraceLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.Unitities.Comment\MyToolkits.Unitities.Comment.csproj">
+      <Project>{68a9bc81-4d91-4e55-a6d1-838b98fe4b7e}</Project>
+      <Name>MyToolkits.Unitities.Comment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyToolkits.Unitities.Conversion\MyToolkits.Unitities.Conversion.csproj">
+      <Project>{d86c7440-d24a-492d-89b6-209680db1f69}</Project>
+      <Name>MyToolkits.Unitities.Conversion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

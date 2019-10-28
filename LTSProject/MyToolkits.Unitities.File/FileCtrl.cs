@@ -1,13 +1,10 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Web;
 
-namespace Project.Unitities.File
+namespace MyToolkits.Unitities.File
 {
     public class FileCtrl
     {
@@ -19,7 +16,7 @@ namespace Project.Unitities.File
         /// <param name="inidir"></param>
         /// <param name="filter"></param>
         /// <returns></returns>
-        public static string OpenFile(string inidir = null,string filter = null)
+        public static string OpenFile(string inidir = null, string filter = null)
         {
             string path = null;
             //Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
@@ -44,8 +41,8 @@ namespace Project.Unitities.File
             string path = null;
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.IsFolderPicker = true;
-            if(inidir != null) dialog.InitialDirectory = inidir;
-            if(dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (inidir != null) dialog.InitialDirectory = inidir;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 path = dialog.FileName;
             }
@@ -80,9 +77,9 @@ namespace Project.Unitities.File
         /// <param name="filePath">目录的绝对路径</param>
         /// <param name="fileName">文件名</param>
         /// <returns></returns>
-        public static bool IsExistFile(string filePath,string fileName)
+        public static bool IsExistFile(string filePath, string fileName)
         {
-            return System.IO.File.Exists(Path.Combine(filePath,fileName));
+            return System.IO.File.Exists(Path.Combine(filePath, fileName));
         }
         #endregion
 
@@ -604,15 +601,15 @@ namespace Project.Unitities.File
         /// 从文件的绝对路径中获取文件名
         /// </summary>
         /// <param name="filePath">文件的绝对路径</param>        
-        public static string GetFileNameNoExtension(string fullPath,int mode)
+        public static string GetFileNameNoExtension(string fullPath, int mode)
         {
             string filename = System.IO.Path.GetFileName(fullPath);//文件名  “Default.aspx”
             string extension = System.IO.Path.GetExtension(fullPath);//扩展名 “.aspx”
             string returnname;
             string fileNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(fullPath);// 没有扩展名的文件名 “Default”
-            switch(mode)
+            switch (mode)
             {
-                case 1: returnname = filename;break;
+                case 1: returnname = filename; break;
                 case 2: returnname = extension; break;
                 case 3: returnname = fileNameWithoutExtension; break;
                 default: returnname = filename; break;
@@ -628,7 +625,7 @@ namespace Project.Unitities.File
         /// <param name="directoryPath">指定目录的绝对路径</param>
         public static void ClearDirectory(string directoryPath)
         {
-            directoryPath = HttpContext.Current.Server.MapPath(directoryPath);
+            //directoryPath = HttpContext.Current.Server.MapPath(directoryPath);
             if (IsExistDirectory(directoryPath))
             {
                 //删除目录中所有的文件
@@ -669,7 +666,7 @@ namespace Project.Unitities.File
         /// <param name="directoryPath">指定目录的绝对路径</param>
         public static void DeleteDirectory(string directoryPath)
         {
-            directoryPath = HttpContext.Current.Server.MapPath(directoryPath);
+            //directoryPath = HttpContext.Current.Server.MapPath(directoryPath);
             if (IsExistDirectory(directoryPath))
             {
                 Directory.Delete(directoryPath, true);
@@ -683,10 +680,10 @@ namespace Project.Unitities.File
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public static string MapPath(string path)
-        {
-            return HttpContext.Current.Server.MapPath(path);
-        }
+        //public static string MapPath(string path)
+        //{
+        //    return HttpContext.Current.Server.MapPath(path);
+        //}
         /// <summary>
         /// 获取当前目录
         /// </summary>

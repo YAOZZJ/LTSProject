@@ -1,13 +1,14 @@
-﻿using SQLite;
+﻿using MyToolkits.DataBase.Base;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using static SQLite.SQLiteConnection;
 
-namespace Project.Unitities.Database
+namespace MyToolkits.DataBase.SqliteDataBase
 {
-    public class SqliteDatabase : IDataBase
+    public class SqliteDataBase : IDataBase
     {
         #region 'Variables'
         SQLiteConnection _db;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project.Unitities.Database
+namespace MyToolkits.DataBase.Base
 {
     public interface IDataBase : IDisposable
     {
@@ -21,6 +21,6 @@ namespace Project.Unitities.Database
         void Delete<T>(object primaryKey);
         void DeleteAll<T>();
         List<T> GetTable<T>() where T : class, new();
-        void Dispose();
+        //void Dispose();
     }
 }

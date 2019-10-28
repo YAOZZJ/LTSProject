@@ -1,7 +1,6 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using Project.Unitities.File;
-using Project.Unitities.Log;
+using MyToolkits.Log.TraceLog;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
