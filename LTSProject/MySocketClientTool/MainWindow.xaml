@@ -1,0 +1,33 @@
+﻿<Window x:Class="MySocketClientTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySocketClientTool"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl>
+            
+        </TabControl>
+        <TextBox Text="{Binding MessageAll}" IsReadOnly="True" Height="200" Grid.Row="1"
+                 Name="TxtOutput" TextChanged="TxtOutput_TextChanged"
+                 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Command="{Binding Command1}" Margin="0 0 5 0" Height="30">Button1</Button>
+            <Button Command="{Binding Command2}" Margin="0 0 5 0">Button2</Button>
+            <Button Command="{Binding Command3}" Margin="0 0 5 0">Button3</Button>
+            <Button Command="{Binding Command4}" Margin="0 0 5 0">Button4</Button>
+            <Button Command="{Binding Command5}" Margin="0 0 5 0">Button5</Button>
+            <Button Command="{Binding Command6}" Margin="0 0 5 0">Button6</Button>
+            <Button Command="{Binding Command7}" Margin="0 0 5 0">Button7</Button>
+            <ProgressBar IsIndeterminate="True" Width="100" Height="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
