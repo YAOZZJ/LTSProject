@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace MyToolkits.Mvvm.Base
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBaseSimple : INotifyPropertyChanged
     {
         protected void RaisePropertyChanged<T>(Expression<Func<T>> action)
         {

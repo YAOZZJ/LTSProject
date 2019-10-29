@@ -176,6 +176,7 @@
                         </avalondock:LayoutAnchorablePane>
                         <avalondock:LayoutAnchorablePane>
                             <avalondock:LayoutAnchorable Title="LineChart">
+                                <ctrlLvc:LineChartBasic/>
                             </avalondock:LayoutAnchorable>
                             <avalondock:LayoutAnchorable Title="LowerL2">
                                 <TextBlock>fffff</TextBlock>

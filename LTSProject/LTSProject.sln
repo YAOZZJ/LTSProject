@@ -37,19 +37,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.Unitities.Conver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySocketClientTool", "MySocketClientTool\MySocketClientTool.csproj", "{AA48DFD5-8767-4E48-98CB-DA25B060C009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.DataBase.Base", "MyToolkits.DataBase.Base\MyToolkits.DataBase.Base.csproj", "{74863942-13A0-4E70-AE4A-CB30D62053B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.DataBase.Base", "MyToolkits.DataBase.Base\MyToolkits.DataBase.Base.csproj", "{74863942-13A0-4E70-AE4A-CB30D62053B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.DataBase.SqliteDataBase", "MyToolkits.DataBase.SqliteDataBase\MyToolkits.DataBase.SqliteDataBase.csproj", "{0D790CB4-5FF4-46CC-B1EC-F16EBDEA0311}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.DataBase.SqliteDataBase", "MyToolkits.DataBase.SqliteDataBase\MyToolkits.DataBase.SqliteDataBase.csproj", "{0D790CB4-5FF4-46CC-B1EC-F16EBDEA0311}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.Log.NLogService", "MyToolkits.Log.NLogService\MyToolkits.Log.NLogService.csproj", "{0F86BA6F-813B-4DC0-AABE-7F5C6877D7A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.Log.NLogService", "MyToolkits.Log.NLogService\MyToolkits.Log.NLogService.csproj", "{0F86BA6F-813B-4DC0-AABE-7F5C6877D7A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mvvm", "Mvvm", "{DB61CC68-4EA8-4292-9935-C5FEF291AF95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.Mvvm.Base", "MyToolkits.Mvvm.Base\MyToolkits.Mvvm.Base.csproj", "{07829585-435A-4C3F-9277-C2D150D771F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.Mvvm.Base", "MyToolkits.Mvvm.Base\MyToolkits.Mvvm.Base.csproj", "{07829585-435A-4C3F-9277-C2D150D771F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.Unitities.Comment", "MyToolkits.Unitities.Comment\MyToolkits.Unitities.Comment.csproj", "{68A9BC81-4D91-4E55-A6D1-838B98FE4B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.Unitities.Comment", "MyToolkits.Unitities.Comment\MyToolkits.Unitities.Comment.csproj", "{68A9BC81-4D91-4E55-A6D1-838B98FE4B7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.Unitities.File", "MyToolkits.Unitities.File\MyToolkits.Unitities.File.csproj", "{E06FD718-9AE7-4DEA-AD21-A1C8F72D24B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserControl", "UserControl", "{BDB141DD-25DD-4E02-B7C6-30C323022AA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +141,7 @@ Global
 		{07829585-435A-4C3F-9277-C2D150D771F2} = {DB61CC68-4EA8-4292-9935-C5FEF291AF95}
 		{68A9BC81-4D91-4E55-A6D1-838B98FE4B7E} = {A4DEF860-F1D4-4CC1-AFEB-7687CF9F0C97}
 		{E06FD718-9AE7-4DEA-AD21-A1C8F72D24B6} = {0D0666FD-7BDA-4B7A-8456-9806C3D178E2}
+		{BDB141DD-25DD-4E02-B7C6-30C323022AA2} = {E988D7DC-A0B6-439A-B89B-9CB416CE83F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C8630BC-707F-4B19-9469-DFD402677B09}
