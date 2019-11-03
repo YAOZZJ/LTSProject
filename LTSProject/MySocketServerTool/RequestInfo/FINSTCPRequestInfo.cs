@@ -46,6 +46,8 @@ namespace MySocketServerTool.RequestInfo
             Header[2]    =  header[02];
             Header[3]    =  header[03];
 
+            Body = new byte[body.Length];
+            Body = body;
             if (Encoding.Default.GetString(Header) != "FINS") { Key = "UnRegisteredCMD"; return; }
 
             Length[0]    =  header[04];
@@ -64,13 +66,14 @@ namespace MySocketServerTool.RequestInfo
             switch(Command[3])//准确来说应该是Conversion.AryByteTo<int>(Command)
             {
                 case 0: Key = "FinsHandShaking";return;
-                case 2: Key = "FinsRWData";break;
+                //case 2: Key = "FinsRWData";break;
+                case 2: break;
                 default: Key = "UnRegisteredCMD";return;
             }
 
             if (body.Length < 26) { Key = "UnRegisteredCMD"; return; }
 
-            ICF =  body[08];
+            ICF          =  body[08];
             RSV          =  body[09];
             GCT          =  body[10];
             DNA          =  body[11];
@@ -89,11 +92,17 @@ namespace MySocketServerTool.RequestInfo
             Number[0]    =  body[24];
             Number[1]    =  body[25];
 
-            Data = new byte[body.Length - 26];
-            for (int i = 26;i < body.Length; i++) Data[i - 26] = body[i];
-
-            //Key = "FINS";
-            //Body = body;
+            if (MRC == 1 & SRC == 1)
+            {
+                Key = "FinsReadData";
+            }
+            else if(MRC == 1 & SRC == 2)
+            {
+                Key = "FinsWriteData";
+                Data = new byte[body.Length - 26];
+                for (int i = 26; i < body.Length; i++) Data[i - 26] = body[i];
+            }
+            
         }
         public string  Key       {get;set;}
         public byte[]  Body      {get;set;}

@@ -5,7 +5,7 @@ using SuperSocket.SocketBase.Protocol;
 
 namespace MySocketServerTool.Command
 {
-    public class FinsRWData : CommandBase<FinsSession, FinsTcpRequestInfo>
+    public class FinsWriteData : CommandBase<FinsSession, FinsTcpRequestInfo>
     {
         public override void ExecuteCommand(FinsSession session, FinsTcpRequestInfo requestInfo)
         {
