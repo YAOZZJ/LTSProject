@@ -10,16 +10,14 @@ namespace MySocketServerTool.Command
     {
         public override void ExecuteCommand(FinsSession session, FinsTcpRequestInfo requestInfo)
         {
-            //session.Send($"Hello {session.RemoteEndPoint.Address} {session.RemoteEndPoint.Port} {requestInfo.Body}");
-            //session.Send(requestInfo.Body, 0, requestInfo.Body.Length);
-            byte[] _header = requestInfo.Header;
-            List<byte> _body = new List<byte>(requestInfo.Body);
-            _body.Add(0x00);
-            _body.Add(0x00);
-            _body.Add(0x00);
-            _body.Add(0x01);
-            _header[7] = (byte)_body.Count;//待优化,command不会超过255,不会溢出
-            session.Send(requestInfo.Body, 0, requestInfo.Body.Length);
+            List<byte> _data = new List<byte>(requestInfo.Header);
+            _data.AddRange(requestInfo.Command);
+            _data.AddRange(requestInfo.Body);
+            _data.Add(0);
+            _data.Add(0);
+            _data.Add(0);
+            _data.Add(1);
+            session.Send(_data.ToArray(), 0, _data.Count);
         }
     }
 }

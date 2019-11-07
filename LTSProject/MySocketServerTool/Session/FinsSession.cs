@@ -8,7 +8,7 @@ namespace MySocketServerTool.Session
     {
         protected override void OnSessionStarted()
         {
-            this.Send("welecome to custom socket");
+            //this.Send("welecome to custom socket");
         }
 
         protected override void HandleUnknownRequest(FinsTcpRequestInfo requestInfo)
@@ -19,7 +19,7 @@ namespace MySocketServerTool.Session
 
         protected override void HandleException(Exception e)
         {
-            this.Send("Application error: {0}", e.Message);
+            //this.Send("Application error: {0}", e.Message);
             base.HandleException(e);
         }
 

@@ -7,6 +7,8 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MySocketServerTool.ViewModel
 {
@@ -30,6 +32,16 @@ namespace MySocketServerTool.ViewModel
         void Action1()
         {
             //_server.Start();
+            Task.Run
+                (()=> 
+                {
+                    while(true)
+                    {
+                        _valuex[0] += 1.00;
+                        Thread.Sleep(100);
+                        TraceLog.WriteLine(_valuex[0].ToString());
+                    }
+                });
         }
         void Action2()
         {
@@ -66,7 +78,11 @@ namespace MySocketServerTool.ViewModel
         {
             if (e.PropertyName == "Trace")
                 MessageAll += _trace.Trace;
+            try
+            {
                 MessageCurrent = _trace.Trace2.Split('|')[3];
+            }
+            catch (Exception) { }
         }
         #endregion
 
@@ -76,6 +92,8 @@ namespace MySocketServerTool.ViewModel
         string _inputText;
         MyTraceListener _trace;
         MyBootstrap _bootstrap;
+        double[] _valuex = new double[16];
+        double[] _valuey = new double[16];
         public string MessageCurrent { get => _message; set => Set(ref _message, value); }
         public string MessageAll { get => _messageAll; set => Set(ref _messageAll, value); }
         public string InputText { get => _inputText; set => Set(ref _inputText, value); }
