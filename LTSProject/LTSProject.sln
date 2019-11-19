@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToolkits.Unitities.File",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserControl", "UserControl", "{BDB141DD-25DD-4E02-B7C6-30C323022AA2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyToolkits.Sockets", "MyToolkits.Sockets\MyToolkits.Sockets.csproj", "{EA674C67-591F-4A13-892C-E589485A781F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,10 @@ Global
 		{E06FD718-9AE7-4DEA-AD21-A1C8F72D24B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06FD718-9AE7-4DEA-AD21-A1C8F72D24B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E06FD718-9AE7-4DEA-AD21-A1C8F72D24B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA674C67-591F-4A13-892C-E589485A781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA674C67-591F-4A13-892C-E589485A781F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA674C67-591F-4A13-892C-E589485A781F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA674C67-591F-4A13-892C-E589485A781F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +148,7 @@ Global
 		{68A9BC81-4D91-4E55-A6D1-838B98FE4B7E} = {A4DEF860-F1D4-4CC1-AFEB-7687CF9F0C97}
 		{E06FD718-9AE7-4DEA-AD21-A1C8F72D24B6} = {0D0666FD-7BDA-4B7A-8456-9806C3D178E2}
 		{BDB141DD-25DD-4E02-B7C6-30C323022AA2} = {E988D7DC-A0B6-439A-B89B-9CB416CE83F3}
+		{EA674C67-591F-4A13-892C-E589485A781F} = {4A4467A5-A9A5-4C8B-96E7-73899C074D33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C8630BC-707F-4B19-9469-DFD402677B09}
